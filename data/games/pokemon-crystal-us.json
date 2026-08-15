@@ -1,0 +1,108 @@
+{
+  "schema_version": 1,
+  "game": {
+    "slug": "pokemon-crystal-us",
+    "title": "Pokémon Crystal",
+    "system": "gbc",
+    "region": "US",
+    "revisions": ["v1.0", "v1.1"],
+    "revision_note": "US Crystal shipped as v1.0 and v1.1. None of the sources for these codes distinguish between them — if a code misbehaves, that may be why."
+  },
+  "codes": [
+    {
+      "id": "crystal-infinite-money",
+      "name": "Infinite Money",
+      "description": "Sets money to the maximum (999,999). If this 6-line version misbehaves, the documented Crystal-specific core is the last three lines alone.",
+      "device": "gameshark_gb",
+      "code": "019973D5\n019974D5\n019975D5\n910F4ED8\n91424FD8\n913F50D8",
+      "region": "US",
+      "rom_revision": "unspecified",
+      "requires_master_code": false,
+      "master_code_id": null,
+      "is_master_code": false,
+      "activation": null,
+      "reliability": "source_verified",
+      "side_effects": [
+        "Enable one cheat at a time; save before activating and disable the cheat before saving again."
+      ],
+      "source_url": "https://thatvideogameblog.com/pokemon-crystal-cheats/",
+      "last_verified": "2026-08-15"
+    },
+    {
+      "id": "crystal-rare-candy-bag",
+      "name": "Rare Candy in bag slot 1",
+      "description": "Turns whatever item is in the first Items-pocket slot into Rare Candy, keeping its quantity.",
+      "device": "gameshark_gb",
+      "code": "012093D8",
+      "region": "US",
+      "rom_revision": "unspecified",
+      "requires_master_code": false,
+      "master_code_id": null,
+      "is_master_code": false,
+      "activation": "Put a cheap stackable item in bag slot 1 first",
+      "reliability": "source_verified",
+      "side_effects": [
+        "Replaces the item currently in bag slot 1 — one player reported key items disappearing; keep a backup save."
+      ],
+      "source_url": "https://www.pokemoncoders.com/pokemon-crystal-cheats/",
+      "last_verified": "2026-08-15"
+    },
+    {
+      "id": "crystal-master-ball-mart",
+      "name": "Buy Master Balls at Poké Mart",
+      "description": "Makes Master Ball the first item sold at any Poké Mart, in unlimited supply.",
+      "device": "gameshark_gb",
+      "code": "0101F1D0\n9101EAD1",
+      "region": "US",
+      "rom_revision": "unspecified",
+      "requires_master_code": false,
+      "master_code_id": null,
+      "is_master_code": false,
+      "activation": "Buy from any Poké Mart",
+      "reliability": "source_verified",
+      "side_effects": [
+        "Replaces the mart's normal first item while active — disable after buying."
+      ],
+      "source_url": "https://www.pokemoncoders.com/pokemon-crystal-cheats/",
+      "last_verified": "2026-08-15"
+    },
+    {
+      "id": "crystal-shiny-encounter",
+      "name": "Shiny Wild Pokémon",
+      "description": "Forces wild encounters to be shiny. If it doesn't trigger, sources note the 01-prefix form (010730D2) has worked where this one didn't.",
+      "device": "gameshark_gb",
+      "code": "910730D2",
+      "region": "US",
+      "rom_revision": "unspecified",
+      "requires_master_code": false,
+      "master_code_id": null,
+      "is_master_code": false,
+      "activation": null,
+      "reliability": "source_verified",
+      "side_effects": [
+        "You cannot run away from battles while this code is active — disable after catching."
+      ],
+      "source_url": "https://www.pokemoncoders.com/pokemon-crystal-cheats/",
+      "last_verified": "2026-08-15"
+    },
+    {
+      "id": "crystal-walk-through-walls",
+      "name": "Walk Through Walls",
+      "description": "Walk through walls, trees, water and other collision. The last four lines are the documented original; the 8-line form is what modern sources publish.",
+      "device": "gameshark_gb",
+      "code": "010AA3CE\n010AA4CE\n010AA5CE\n010AA6CE\n9100FAC2\n9100FBC2\n9100FCC2\n9100FDC2",
+      "region": "US",
+      "rom_revision": "unspecified",
+      "requires_master_code": false,
+      "master_code_id": null,
+      "is_master_code": false,
+      "activation": null,
+      "reliability": "source_verified",
+      "side_effects": [
+        "Can freeze the game in certain map areas — save before enabling, disable before going through doors."
+      ],
+      "source_url": "https://www.pokemoncoders.com/pokemon-crystal-cheats/",
+      "last_verified": "2026-08-15"
+    }
+  ]
+}

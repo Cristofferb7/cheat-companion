@@ -1,0 +1,29 @@
+# Generate the Xcode project with: xcodegen generate --spec App/project.yml
+# (requires Xcode installed; see README)
+name: CheatCompanion
+options:
+  bundleIdPrefix: com.cristoffer
+  deploymentTarget:
+    iOS: "16.0"
+packages:
+  CheatKit:
+    path: ..
+targets:
+  CheatCompanion:
+    type: application
+    platform: iOS
+    sources:
+      - path: Sources
+      - path: ../data/games
+        type: folder
+        buildPhase: resources
+    dependencies:
+      - package: CheatKit
+    info:
+      path: Sources/Info.plist
+      properties:
+        UILaunchScreen: {}
+        CFBundleDisplayName: Cheat Companion
+        # Required for canOpenURL(delta://) checks
+        LSApplicationQueriesSchemes: [delta]
+        UISupportedInterfaceOrientations: [UIInterfaceOrientationPortrait]

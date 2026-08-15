@@ -1,0 +1,140 @@
+{
+  "schema_version": 1,
+  "game": {
+    "slug": "pokemon-platinum-us",
+    "title": "Pokémon Platinum",
+    "system": "nds",
+    "region": "US",
+    "revisions": ["CPUE-D074D1B3"],
+    "revision_note": "Action Replay DS codes are tied to the US cartridge game ID (CPUE). They will not work on EU/JP ROMs."
+  },
+  "codes": [
+    {
+      "id": "platinum-900x-medicine",
+      "name": "900x All Medicine (incl. Rare Candies)",
+      "description": "Sets every item in the Medicine pocket, including Rare Candies, to 900 each. From the official CodeJunkies code list.",
+      "device": "action_replay_ds",
+      "code": "94000130 FCBF0000\n62101D40 00000000\nB2101D40 00000000\nD5000000 03840011\nC0000000 00000025\nD6000000 00000B60\nD4000000 00000001\nD2000000 00000000",
+      "region": "US",
+      "rom_revision": "CPUE-D074D1B3-3811DEF6",
+      "requires_master_code": false,
+      "master_code_id": null,
+      "is_master_code": false,
+      "activation": "Press UP+L+R, then check your bag",
+      "reliability": "source_verified",
+      "side_effects": [
+        "Fills the entire Medicine pocket with 900 of every medicine item — unwanted items must be tossed manually."
+      ],
+      "source_url": "https://www.chaptercheats.com/cheat/ds/26802/pokemon-platinum/code/16658",
+      "last_verified": "2026-08-15"
+    },
+    {
+      "id": "platinum-max-cash",
+      "name": "Max Cash 999,999",
+      "description": "Sets player money to 999,999. From the official CodeJunkies code list.",
+      "device": "action_replay_ds",
+      "code": "94000130 FCFF0000\n62101D40 00000000\nB2101D40 00000000\n00000090 000F423F\nD2000000 00000000",
+      "region": "US",
+      "rom_revision": "CPUE-D074D1B3-3811DEF6",
+      "requires_master_code": false,
+      "master_code_id": null,
+      "is_master_code": false,
+      "activation": "Press L+R",
+      "reliability": "source_verified",
+      "side_effects": [],
+      "source_url": "https://www.chaptercheats.com/cheat/ds/26802/pokemon-platinum/code/16658",
+      "last_verified": "2026-08-15"
+    },
+    {
+      "id": "platinum-pokeballs-995",
+      "name": "All Poké Balls x995 (incl. Master Ball)",
+      "description": "Writes 995 of each Poké Ball type (Master Ball through Cherish Ball) into the Poké Ball pocket.",
+      "device": "action_replay_ds",
+      "code": "94000130 FCFF0000\nB2101D40 00000000\nE0000D00 0000003C\n03E30001 03E30002\n03E30003 03E30004\n03E30006 03E30007\n03E30008 03E30009\n03E3000A 03E3000B\n03E3000C 03E3000D\n03E3000E 03E3000F\n03E30010 00000000\nD2000000 00000000",
+      "region": "US",
+      "rom_revision": "unspecified",
+      "requires_master_code": false,
+      "master_code_id": null,
+      "is_master_code": false,
+      "activation": "Press L+R",
+      "reliability": "source_verified",
+      "side_effects": [
+        "Overwrites the entire Poké Ball pocket, replacing existing ball quantities."
+      ],
+      "source_url": "https://gaminggorilla.com/pokemon-platinum-cheats/",
+      "last_verified": "2026-08-15"
+    },
+    {
+      "id": "platinum-walk-through-walls",
+      "name": "Walk Through Walls (toggleable)",
+      "description": "Patches the collision check while enabled and restores the original value when disabled.",
+      "device": "action_replay_ds",
+      "code": "94000130 FCFD0200\n12060C20 00000200\nD2000000 00000000\n94000130 FCFD0100\n12060C20 00001C20\nD2000000 00000000",
+      "region": "US",
+      "rom_revision": "CPUE-D074D1B3",
+      "requires_master_code": false,
+      "master_code_id": null,
+      "is_master_code": false,
+      "activation": "Press R+B to enable, L+B to disable",
+      "reliability": "source_verified",
+      "side_effects": [
+        "Disable (L+B) before entering doors or scripted areas."
+      ],
+      "source_url": "https://projectpokemon.org/home/forums/topic/58889-pok%C3%A9mon-platinum-u-action-replay-codes/",
+      "last_verified": "2026-08-15"
+    },
+    {
+      "id": "platinum-quick-exp",
+      "name": "Quick EXP Gain",
+      "description": "Greatly boosts experience awarded from battle. From the official CodeJunkies code list.",
+      "device": "action_replay_ds",
+      "code": "94000130 FEFF0000\n621BFB0C 00000000\nB21BFB0C 00000000\n1000229C 00000500\nD2000000 00000000",
+      "region": "US",
+      "rom_revision": "CPUE-D074D1B3-3811DEF6",
+      "requires_master_code": false,
+      "master_code_id": null,
+      "is_master_code": false,
+      "activation": "Hold R at the 'wild Pokémon fainted' message",
+      "reliability": "source_verified",
+      "side_effects": [],
+      "source_url": "https://www.chaptercheats.com/cheat/ds/26802/pokemon-platinum/code/16658",
+      "last_verified": "2026-08-15"
+    },
+    {
+      "id": "platinum-rebattle-trainers",
+      "name": "Rebattle Trainers",
+      "description": "Rebattle already-defeated trainers by holding R when talking to them.",
+      "device": "action_replay_ds",
+      "code": "0203FC70 F7FF1C20\n94000130 FEFF0000\n0203FC70 E0002000\nD2000000 00000000",
+      "region": "US",
+      "rom_revision": "CPUE-D074D1B3",
+      "requires_master_code": false,
+      "master_code_id": null,
+      "is_master_code": false,
+      "activation": "Hold R when speaking to a trainer",
+      "reliability": "community_reported",
+      "side_effects": [],
+      "source_url": "https://projectpokemon.org/home/forums/topic/58889-pok%C3%A9mon-platinum-u-action-replay-codes/",
+      "last_verified": "2026-08-15"
+    },
+    {
+      "id": "platinum-shiny-encounter",
+      "name": "Shiny Encounter (Wild/Legendary/Egg)",
+      "description": "Toggleable shiny code: while active, wild, legendary, and egg Pokémon are shiny.",
+      "device": "action_replay_ds",
+      "code": "02071D78 47104A00\n02071D7C 02000031\n94000130 FCFE0200\n0207406C 47084900\n02074070 02000001\n02073E3C 47084900\n02073E40 02000051\n12073E30 000046C0\nD2000000 00000000\n94000130 FCFE0100\n0207406C 95019000\n02074070 90022000\n02073E3C 43200400\n02073E40 1C28900D\n12073E30 0000D107\nD2000000 00000000\n62000000 95019000\nE2000000 00000080\n95019000 90022000\n1C28B40D F0754907\n1C01FF13 2901BC0D\n4902D101 49024708\n00004708 02074075\n02074053 00000000\n95019000 69384A04\n98046010 4B019A09\n00004718 02071D81\n0200002C 00000000\n43200400 4907B401\nF0756809 1C01FEED\n2901BC01 4904D001\n900D4708 49031C28\n00004708 0200002C\n02073E33 02073E45\nD2000000 00000000",
+      "region": "US",
+      "rom_revision": "CPUE-D074D1B3",
+      "requires_master_code": false,
+      "master_code_id": null,
+      "is_master_code": false,
+      "activation": "On the Trainer Card: hold R and press A to activate; hold L and press A to deactivate",
+      "reliability": "source_verified",
+      "side_effects": [
+        "35-line ASM code — it must be entered complete and exactly; a partial entry can crash or corrupt the game."
+      ],
+      "source_url": "https://projectpokemon.org/home/forums/topic/58889-pok%C3%A9mon-platinum-u-action-replay-codes/",
+      "last_verified": "2026-08-15"
+    }
+  ]
+}

@@ -1,0 +1,200 @@
+{
+  "schema_version": 1,
+  "game": {
+    "slug": "pokemon-emerald-us",
+    "title": "Pokémon Emerald",
+    "system": "gba",
+    "region": "US",
+    "revisions": ["v1.0"],
+    "revision_note": null
+  },
+  "codes": [
+    {
+      "id": "emerald-master",
+      "name": "Master Code",
+      "description": "Primary master code for Pokémon Emerald US. Add it in Delta as its own cheat and enable it before any other GameShark v3 / Action Replay code.",
+      "device": "gameshark_v3",
+      "code": "D8BAE4D9 4864DCE5\nA86CDBA5 19BA49B3",
+      "region": "US",
+      "rom_revision": "unspecified",
+      "requires_master_code": false,
+      "master_code_id": null,
+      "is_master_code": true,
+      "activation": null,
+      "reliability": "source_verified",
+      "side_effects": [],
+      "source_url": "https://www.pokeharbor.com/2022/09/pokemon-emerald-cheats/",
+      "last_verified": "2026-08-15"
+    },
+    {
+      "id": "emerald-encounter-master",
+      "name": "Encounter Master Code",
+      "description": "Alternate master code that sources pair specifically with encounter-related cheats (Master Ball, wild Pokémon codes). Add as its own cheat and enable it.",
+      "device": "gameshark_v3",
+      "code": "B749822B CE9BFAC1\nA86CDBA5 19BA49B3",
+      "region": "US",
+      "rom_revision": "unspecified",
+      "requires_master_code": false,
+      "master_code_id": null,
+      "is_master_code": true,
+      "activation": null,
+      "reliability": "source_verified",
+      "side_effects": [],
+      "source_url": "https://simplegameguide.com/pokemon-emerald-cheats/",
+      "last_verified": "2026-08-15"
+    },
+    {
+      "id": "emerald-walk-through-walls",
+      "name": "Walk Through Walls",
+      "description": "Walk through walls and obstacles. Sources disagree on whether the master code is needed; enabling it costs nothing, so it's listed as required here.",
+      "device": "gameshark_v3",
+      "code": "7881A409 E2026E0C\n8E883EFF 92E9660D",
+      "region": "US",
+      "rom_revision": "unspecified",
+      "requires_master_code": true,
+      "master_code_id": "emerald-master",
+      "is_master_code": false,
+      "activation": null,
+      "reliability": "source_verified",
+      "side_effects": [
+        "Entering restricted areas can glitch or freeze the game — disable when not in use.",
+        "Running many cheats at once has been reported to cause random freezes."
+      ],
+      "source_url": "https://gaminggorilla.com/pokemon-emerald-cheats/",
+      "last_verified": "2026-08-15"
+    },
+    {
+      "id": "emerald-rare-candy-pc",
+      "name": "Rare Candy in PC",
+      "description": "Fills PC Item Storage with unlimited Rare Candies. Withdraw them at any Pokémon Center PC.",
+      "device": "gameshark_v3",
+      "code": "BFF956FA 2F9EC50D",
+      "region": "US",
+      "rom_revision": "unspecified",
+      "requires_master_code": true,
+      "master_code_id": "emerald-master",
+      "is_master_code": false,
+      "activation": "Pokémon Center PC → Item Storage → Withdraw Item",
+      "reliability": "source_verified",
+      "side_effects": [
+        "Not reversible: once activated, the PC permanently contains unlimited Rare Candies."
+      ],
+      "source_url": "https://emeraldcheats.com/rare-candy-cheats/",
+      "last_verified": "2026-08-15"
+    },
+    {
+      "id": "emerald-rare-candy-mart",
+      "name": "Rare Candy at Poké Mart",
+      "description": "Makes the first Poké Mart slot sell Rare Candies (item ID 044). You still pay with in-game money.",
+      "device": "codebreaker",
+      "code": "82005274 0044",
+      "region": "US",
+      "rom_revision": "unspecified",
+      "requires_master_code": false,
+      "master_code_id": null,
+      "is_master_code": false,
+      "activation": "Buy from any Poké Mart",
+      "reliability": "source_verified",
+      "side_effects": [
+        "Uses the same Mart slot as the Master Ball mart code — enable only one of them at a time."
+      ],
+      "source_url": "https://emeraldcheats.com/rare-candy-cheats/",
+      "last_verified": "2026-08-15"
+    },
+    {
+      "id": "emerald-master-ball-mart",
+      "name": "Master Ball at Poké Mart",
+      "description": "Makes the first Poké Mart slot sell Master Balls (item ID 001). You still pay with in-game money.",
+      "device": "codebreaker",
+      "code": "82005274 0001",
+      "region": "US",
+      "rom_revision": "unspecified",
+      "requires_master_code": false,
+      "master_code_id": null,
+      "is_master_code": false,
+      "activation": "Buy from any Poké Mart",
+      "reliability": "source_verified",
+      "side_effects": [
+        "Uses the same Mart slot as the Rare Candy mart code — enable only one of them at a time."
+      ],
+      "source_url": "https://gaminggorilla.com/pokemon-emerald-cheats/",
+      "last_verified": "2026-08-15"
+    },
+    {
+      "id": "emerald-master-ball-pc",
+      "name": "Master Balls in PC",
+      "description": "Provides Master Balls via PC item storage. Sources pair this with the Encounter Master Code.",
+      "device": "gameshark_v3",
+      "code": "128898B6 EDA43037",
+      "region": "US",
+      "rom_revision": "unspecified",
+      "requires_master_code": true,
+      "master_code_id": "emerald-encounter-master",
+      "is_master_code": false,
+      "activation": "Pokémon Center PC → Item Storage → Withdraw Item",
+      "reliability": "source_verified",
+      "side_effects": [],
+      "source_url": "https://www.pokeharbor.com/2022/09/pokemon-emerald-cheats/",
+      "last_verified": "2026-08-15"
+    },
+    {
+      "id": "emerald-infinite-money",
+      "name": "Infinite Money",
+      "description": "Maxes out player money.",
+      "device": "gameshark_v3",
+      "code": "A57E2EDE A5AFF3E4\n1C7B3231 B494738C\nC051CCF6 975E8DA1",
+      "region": "US",
+      "rom_revision": "unspecified",
+      "requires_master_code": true,
+      "master_code_id": "emerald-master",
+      "is_master_code": false,
+      "activation": null,
+      "reliability": "source_verified",
+      "side_effects": [
+        "The money total may not refresh until you enter a wild battle and run."
+      ],
+      "source_url": "https://simplegameguide.com/pokemon-emerald-cheats/",
+      "last_verified": "2026-08-15"
+    },
+    {
+      "id": "emerald-shiny-wild",
+      "name": "Shiny Wild Pokémon",
+      "description": "Forces wild encounters to be shiny.",
+      "device": "gameshark_v3",
+      "code": "F3A9A86D 4E2629B4\n18452A7D DDE55BCC",
+      "region": "US",
+      "rom_revision": "unspecified",
+      "requires_master_code": true,
+      "master_code_id": "emerald-master",
+      "is_master_code": false,
+      "activation": null,
+      "reliability": "source_verified",
+      "side_effects": [
+        "Turn the cheat OFF before actually catching the shiny to avoid name glitches.",
+        "Encounter cheats have been associated with 'bad egg' issues — back up your save first."
+      ],
+      "source_url": "https://www.gamechampions.com/en/blog/pokemon-emerald-cheat-code/",
+      "last_verified": "2026-08-15"
+    },
+    {
+      "id": "emerald-exp-9999",
+      "name": "9,999 EXP per battle",
+      "description": "Awards 9,999 EXP per battle (270F hex = 9999).",
+      "device": "codebreaker",
+      "code": "82000060 270F\n82022D48 270F\n82022F7C 270F\n8202309C 270F\n820241F0 270F",
+      "region": "US",
+      "rom_revision": "unspecified",
+      "requires_master_code": false,
+      "master_code_id": null,
+      "is_master_code": false,
+      "activation": null,
+      "reliability": "community_reported",
+      "side_effects": [
+        "Disable once your Pokémon reaches the target level.",
+        "Sources disagree on this code's exact line set and grouping — test on a fresh save."
+      ],
+      "source_url": "https://emeraldcheats.com/",
+      "last_verified": "2026-08-15"
+    }
+  ]
+}
