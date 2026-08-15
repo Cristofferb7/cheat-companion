@@ -4,7 +4,7 @@ name: CheatCompanion
 options:
   bundleIdPrefix: com.cristoffer
   deploymentTarget:
-    iOS: "16.0"
+    iOS: "17.0"
 packages:
   CheatKit:
     path: ..

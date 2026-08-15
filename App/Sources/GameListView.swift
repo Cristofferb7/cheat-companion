@@ -26,7 +26,11 @@ struct GameListView: View {
                 }
             }
             .navigationTitle("Games")
-            .searchable(text: $searchText, prompt: "Search games")
+            // navigationBarDrawer keeps the field on this screen only —
+            // the default bottom placement floats over pushed views.
+            .searchable(text: $searchText,
+                        placement: .navigationBarDrawer(displayMode: .automatic),
+                        prompt: "Search games")
             .navigationDestination(for: String.self) { slug in
                 if let file = library.games.first(where: { $0.game.slug == slug }) {
                     GameDetailView(file: file)
