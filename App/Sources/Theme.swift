@@ -12,7 +12,41 @@ extension Color {
     }
 }
 
+/// User-selectable appearance, persisted in AppStorage.
+enum Appearance: String, CaseIterable, Identifiable {
+    case system, light, dark
+
+    var id: String { rawValue }
+
+    var label: String {
+        switch self {
+        case .system: return "System"
+        case .light: return "Light"
+        case .dark: return "Dark"
+        }
+    }
+
+    var iconName: String {
+        switch self {
+        case .system: return "circle.lefthalf.filled"
+        case .light: return "sun.max.fill"
+        case .dark: return "moon.fill"
+        }
+    }
+
+    var colorScheme: ColorScheme? {
+        switch self {
+        case .system: return nil
+        case .light: return .light
+        case .dark: return .dark
+        }
+    }
+}
+
 enum Theme {
+    static let violet = Color(hex: 0x6C3CE9)
+    static let amber = Color(hex: 0xFFB020)
+
     /// GameShark-screen style block behind code text — fixed dark so codes
     /// read the same in light and dark mode.
     static let codeBackground = Color(hex: 0x1C1833)
