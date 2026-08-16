@@ -1,0 +1,180 @@
+{
+  "schema_version": 1,
+  "game": {
+    "slug": "pokemon-ruby-us",
+    "title": "Pokémon Ruby",
+    "system": "gba",
+    "region": "US",
+    "revisions": ["v1.0", "v1.1", "v1.2"],
+    "revision_note": "These codes were verified against US v1.0 (the most common ROM). v1.1/v1.2 use different addresses — failures on those revisions are documented for several codes. Note: Ruby codes are NOT interchangeable with Sapphire."
+  },
+  "codes": [
+    {
+      "id": "ruby-master-v3",
+      "name": "Master Code (GameShark v3 / AR v3)",
+      "description": "Must-be-on master code for Ruby US on GameShark v3 / Action Replay v3 — the device generation Delta emulates. Add as its own cheat and enable it first. Do not mix with codes written for older device firmware.",
+      "device": "gameshark_v3",
+      "code": "DE00AAFD 2EBD05D0\n530823D9 16558191",
+      "region": "US",
+      "rom_revision": "v1.0",
+      "requires_master_code": false,
+      "master_code_id": null,
+      "is_master_code": true,
+      "activation": null,
+      "reliability": "source_verified",
+      "side_effects": [],
+      "source_url": "https://gamefaqs.gamespot.com/gba/471243-pokemon-ruby-version/faqs/22318",
+      "last_verified": "2026-08-16"
+    },
+    {
+      "id": "ruby-master-prev3",
+      "name": "Master Code (older GameShark / Action Replay)",
+      "description": "Master code for pre-v3 devices. Only needed if a code you're using came from an older-device list — codes from the v3 set and this set are NOT interchangeable.",
+      "device": "action_replay",
+      "code": "9E6AC862 823AB7A8\n46B7D9E4 A709E9E1",
+      "region": "US",
+      "rom_revision": "v1.0",
+      "requires_master_code": false,
+      "master_code_id": null,
+      "is_master_code": true,
+      "activation": null,
+      "reliability": "source_verified",
+      "side_effects": [],
+      "source_url": "https://gamefaqs.gamespot.com/gba/471243-pokemon-ruby-version/faqs/22318",
+      "last_verified": "2026-08-16"
+    },
+    {
+      "id": "ruby-walk-through-walls",
+      "name": "Walk Through Walls",
+      "description": "Walk over any obstacle (trees, houses, rocks) and on water.",
+      "device": "gameshark_v3",
+      "code": "E03B0649 5D67050C\n78DA95DF 44018CB4",
+      "region": "US",
+      "rom_revision": "v1.0",
+      "requires_master_code": true,
+      "master_code_id": "ruby-master-v3",
+      "is_master_code": false,
+      "activation": null,
+      "reliability": "source_verified",
+      "side_effects": [
+        "Easy to get stuck in unreachable map areas — don't save there.",
+        "Reported to stay active after disabling until you save and reload the game.",
+        "Reported NOT to work on v1.1 ROMs."
+      ],
+      "source_url": "https://gamefaqs.gamespot.com/gba/471243-pokemon-ruby-version/faqs/22318",
+      "last_verified": "2026-08-16"
+    },
+    {
+      "id": "ruby-rare-candy-pc",
+      "name": "Rare Candy in PC",
+      "description": "Puts Rare Candies in PC item storage. If it doesn't work, enable the Master Code too, or try the alternate version below.",
+      "device": "action_replay",
+      "code": "280EA266 88A62E5C",
+      "region": "US",
+      "rom_revision": "v1.0",
+      "requires_master_code": false,
+      "master_code_id": null,
+      "is_master_code": false,
+      "activation": "Pokémon Center PC → Item Storage → Withdraw",
+      "reliability": "community_reported",
+      "side_effects": [
+        "Save before applying; if a bad egg or glitch appears, do NOT save.",
+        "Enable only one cheat at a time to avoid freezes."
+      ],
+      "source_url": "https://www.pokemoncoders.com/pokemon-ruby-cheats/",
+      "last_verified": "2026-08-16"
+    },
+    {
+      "id": "ruby-rare-candy-pc-alt",
+      "name": "Rare Candy in PC (alternate)",
+      "description": "Alternate Rare Candy PC code from a different code set. Requires the v3 Master Code enabled.",
+      "device": "gameshark_v3",
+      "code": "2CD8F4BE 651F5B20",
+      "region": "US",
+      "rom_revision": "v1.0",
+      "requires_master_code": true,
+      "master_code_id": "ruby-master-v3",
+      "is_master_code": false,
+      "activation": "Pokémon Center PC → Item Storage → Withdraw",
+      "reliability": "community_reported",
+      "side_effects": [
+        "Use one Rare Candy code at a time, not both."
+      ],
+      "source_url": "https://gamefaqs.gamespot.com/gba/471243-pokemon-ruby-version/faqs/22318",
+      "last_verified": "2026-08-16"
+    },
+    {
+      "id": "ruby-master-ball-pc",
+      "name": "Master Ball in PC",
+      "description": "Puts Master Balls in PC item storage. Listed standalone by one source; if it fails, enable the v3 Master Code.",
+      "device": "gameshark_v3",
+      "code": "91B85743 27069397",
+      "region": "US",
+      "rom_revision": "v1.0",
+      "requires_master_code": true,
+      "master_code_id": "ruby-master-v3",
+      "is_master_code": false,
+      "activation": "Pokémon Center PC → Item Storage → Withdraw",
+      "reliability": "source_verified",
+      "side_effects": [],
+      "source_url": "https://www.pokemoncoders.com/pokemon-ruby-cheats/",
+      "last_verified": "2026-08-16"
+    },
+    {
+      "id": "ruby-infinite-money",
+      "name": "Infinite Money",
+      "description": "Infinite money. If it doesn't work, enable the Master Code too.",
+      "device": "action_replay",
+      "code": "E51E97C3 7858E4EB",
+      "region": "US",
+      "rom_revision": "v1.0",
+      "requires_master_code": false,
+      "master_code_id": null,
+      "is_master_code": false,
+      "activation": null,
+      "reliability": "community_reported",
+      "side_effects": [
+        "On some emulators the money display caps at 3,000 until you spend some."
+      ],
+      "source_url": "https://www.pokemoncoders.com/pokemon-ruby-cheats/",
+      "last_verified": "2026-08-16"
+    },
+    {
+      "id": "ruby-shiny-wild",
+      "name": "Shiny Wild Pokémon",
+      "description": "Wild Pokémon appear shiny while enabled.",
+      "device": "action_replay",
+      "code": "8636B1D6 CA4AB2A9\n18452A7D DDE55BCC",
+      "region": "US",
+      "rom_revision": "v1.0",
+      "requires_master_code": false,
+      "master_code_id": null,
+      "is_master_code": false,
+      "activation": null,
+      "reliability": "community_reported",
+      "side_effects": [
+        "Turn the cheat OFF before catching, or the caught Pokémon keeps a glitched name.",
+        "If a bad egg or glitch appears, do NOT save."
+      ],
+      "source_url": "https://www.pokemoncoders.com/pokemon-ruby-cheats/",
+      "last_verified": "2026-08-16"
+    },
+    {
+      "id": "ruby-no-random-battles",
+      "name": "No Random Battles",
+      "description": "Disables wild encounters. Remember to disable it to encounter Pokémon again.",
+      "device": "action_replay",
+      "code": "3B0C8C5E 96FB832D",
+      "region": "US",
+      "rom_revision": "v1.0",
+      "requires_master_code": false,
+      "master_code_id": null,
+      "is_master_code": false,
+      "activation": null,
+      "reliability": "community_reported",
+      "side_effects": [],
+      "source_url": "https://www.pokemoncoders.com/pokemon-ruby-cheats/",
+      "last_verified": "2026-08-16"
+    }
+  ]
+}

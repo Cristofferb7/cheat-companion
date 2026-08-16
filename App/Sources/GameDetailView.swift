@@ -99,9 +99,12 @@ struct CodeRow: View {
         if code.romRevision == "unspecified" {
             return "Source didn't state a ROM revision — test carefully"
         }
+        // DS game IDs (CPUE…, IPKE…) are informational, not revisions to match.
+        let isDSGameID = code.romRevision.count >= 4 &&
+            code.romRevision.prefix(4).allSatisfy { $0.isUppercase && $0.isLetter }
         if selectedRevision != "unspecified",
            code.romRevision != selectedRevision,
-           !code.romRevision.hasPrefix("CPUE") // DS game IDs aren't revisions
+           !isDSGameID
         {
             return "Made for \(code.romRevision), you selected \(selectedRevision)"
         }

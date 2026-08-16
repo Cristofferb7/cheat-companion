@@ -1,5 +1,26 @@
 # Curation notes — what's in, what's out, and why
 
+## 2026-08-16 additions (Yellow, Ruby, HeartGold)
+
+- **Yellow**: money-code middle line has a circulating D0-vs-D3 typo; the
+  D3 majority reading from older dedicated databases was used and the
+  conflict is noted in the description. Infinite PP and Level-100 are
+  single-source → `community_reported`.
+- **Ruby**: two device generations mean two master-code sets that must not
+  be mixed — both masters ship, and each dependent code references the right
+  one. Omitted: the egg-based "Always Shiny" procedure (its own author warns
+  it crashes the game), the no-space "Unlimited Masterball in bag" variant
+  (formatting suspect, better PC variant exists), the "Unlimited EXP" code
+  (a 2026 user reported it misbehaving specifically on Delta), and the v1.1/
+  v1.2 SID masters (niche, unclear purpose).
+- **HeartGold**: primary source is Cheat Happens' official US list
+  (IPKE-AD102382), cross-confirmed line-for-line on a second site. Two US
+  game-ID variants exist and are surfaced in the revision note. Omitted: an
+  "x99 Rare Candies" code whose block-write header is structurally
+  inconsistent, and Japanese (IPKJ) codes which use a different memory base
+  and must never be used on US carts. EXP multipliers are single-source →
+  `community_reported`.
+
 Research date: 2026-08-15. Codes were gathered from fetched pages only (never
 from memory), cross-checked across sources where possible. gamehacking.org was
 Cloudflare-blocked for GBC/GBA/DS list pages during research except the two
