@@ -118,6 +118,57 @@ let covers: [Cover] = [
         poly(ctx, [(245, 575), (355, 575), (300, 470)], color(0x991B1B, 0.85))
         poly(ctx, [(245, 365), (355, 365), (300, 470)], color(0xF87171, 0.9))
     },
+    Cover(slug: "pokemon-leafgreen-us", top: 0x86EFAC, bottom: 0x15803D,
+          series: "POKÉMON", title: "LeafGreen") { ctx, _ in
+        // Leaf: two arcs meeting at tip and stem
+        let leaf = CGMutablePath()
+        leaf.move(to: CGPoint(x: 300, y: 660))
+        leaf.addQuadCurve(to: CGPoint(x: 300, y: 330),
+                          control: CGPoint(x: 470, y: 560))
+        leaf.addQuadCurve(to: CGPoint(x: 300, y: 660),
+                          control: CGPoint(x: 130, y: 430))
+        leaf.closeSubpath()
+        ctx.addPath(leaf)
+        ctx.setFillColor(color(0xECFDF3))
+        ctx.fillPath()
+        // Midrib
+        ctx.setStrokeColor(color(0x22C55E))
+        ctx.setLineWidth(10)
+        ctx.move(to: CGPoint(x: 300, y: 645))
+        ctx.addQuadCurve(to: CGPoint(x: 300, y: 350),
+                         control: CGPoint(x: 315, y: 500))
+        ctx.strokePath()
+    },
+    Cover(slug: "pokemon-red-blue-us", top: 0xEF4444, bottom: 0x1D4ED8,
+          series: "POKÉMON", title: "Red · Blue") { ctx, _ in
+        // Split field with a centered capture-ball motif (generic circle)
+        poly(ctx, [(0, 840), (600, 840), (0, 0)], color(0xDC2626, 0.55))
+        ctx.setFillColor(color(0xFFFFFF))
+        ctx.fillEllipse(in: CGRect(x: 190, y: 380, width: 220, height: 220))
+        ctx.setFillColor(color(0x1F2937))
+        ctx.fillEllipse(in: CGRect(x: 262, y: 452, width: 76, height: 76))
+        ctx.setFillColor(color(0xFFFFFF))
+        ctx.fillEllipse(in: CGRect(x: 280, y: 470, width: 40, height: 40))
+    },
+    Cover(slug: "pokemon-soulsilver-us", top: 0xE2E8F0, bottom: 0x475569,
+          series: "POKÉMON", title: "SoulSilver") { ctx, _ in
+        // Silver heart
+        let heart = CGMutablePath()
+        heart.move(to: CGPoint(x: 300, y: 330))
+        heart.addLine(to: CGPoint(x: 155, y: 505))
+        heart.addArc(center: CGPoint(x: 228, y: 560), radius: 91,
+                     startAngle: .pi * 1.25, endAngle: .pi * 0.25, clockwise: false)
+        heart.addArc(center: CGPoint(x: 372, y: 560), radius: 91,
+                     startAngle: .pi * 0.75, endAngle: .pi * 1.75, clockwise: false)
+        heart.closeSubpath()
+        ctx.addPath(heart)
+        ctx.setFillColor(color(0xF8FAFC))
+        ctx.fillPath()
+        ctx.addPath(heart)
+        ctx.setStrokeColor(color(0x94A3B8))
+        ctx.setLineWidth(12)
+        ctx.strokePath()
+    },
     Cover(slug: "pokemon-heartgold-us", top: 0xFCD34D, bottom: 0x92400E,
           series: "POKÉMON", title: "HeartGold") { ctx, _ in
         // Heart: two circles + triangle, gold on amber

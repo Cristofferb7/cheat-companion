@@ -5,6 +5,7 @@ struct GameListView: View {
     let library: GameLibrary
 
     @State private var searchText = ""
+    @State private var showSettings = false
     @AppStorage("appearance") private var appearanceRaw = Appearance.system.rawValue
     @AppStorage("howItWorksDismissed") private var howItWorksDismissed = false
     @EnvironmentObject private var favorites: Favorites
@@ -17,10 +18,22 @@ struct GameListView: View {
         searchText.trimmingCharacters(in: .whitespaces)
     }
 
+    @State private var systemFilter: System?
+
     private var filteredGames: [GameFile] {
-        guard !query.isEmpty else { return library.games }
-        return library.games.filter {
+        var games = library.games
+        if let systemFilter {
+            games = games.filter { $0.game.system == systemFilter }
+        }
+        guard !query.isEmpty else { return games }
+        return games.filter {
             $0.game.title.localizedCaseInsensitiveContains(query)
+        }
+    }
+
+    private var systemsInLibrary: [System] {
+        System.allCases.filter { system in
+            library.games.contains { $0.game.system == system }
         }
     }
 
@@ -46,6 +59,7 @@ struct GameListView: View {
 
                     if query.isEmpty {
                         statsRow
+                        systemChips
                         if !howItWorksDismissed { howItWorksCard }
 
                         let starred = favorites.resolved(in: library)
@@ -99,7 +113,16 @@ struct GameListView: View {
                         placement: .navigationBarDrawer(displayMode: .automatic),
                         prompt: "Search games and codes")
             .toolbar {
-                ToolbarItem(placement: .topBarTrailing) { appearanceMenu }
+                ToolbarItem(placement: .topBarTrailing) {
+                    Button {
+                        showSettings = true
+                    } label: {
+                        Image(systemName: "gearshape")
+                    }
+                }
+            }
+            .sheet(isPresented: $showSettings) {
+                SettingsView(library: library)
             }
             .navigationBarTitleDisplayMode(.inline)
             .navigationDestination(for: String.self) { slug in
@@ -143,6 +166,34 @@ struct GameListView: View {
             }
         }
         .padding(.top, 8)
+    }
+
+    private var systemChips: some View {
+        ScrollView(.horizontal, showsIndicators: false) {
+            HStack(spacing: 8) {
+                systemChip(nil, label: "All")
+                ForEach(systemsInLibrary, id: \.self) { system in
+                    systemChip(system, label: system.displayName)
+                }
+            }
+        }
+    }
+
+    private func systemChip(_ system: System?, label: String) -> some View {
+        let isSelected = systemFilter == system
+        let count = system.map { s in library.games.filter { $0.game.system == s }.count }
+            ?? library.games.count
+        return Button {
+            withAnimation(.snappy) { systemFilter = system }
+        } label: {
+            Text("\(label) · \(count)")
+                .font(.caption.weight(.semibold))
+                .foregroundStyle(isSelected ? .white : Theme.violet)
+                .padding(.horizontal, 12).padding(.vertical, 7)
+                .background(isSelected ? Theme.violet : Theme.violet.opacity(0.1),
+                            in: Capsule())
+        }
+        .buttonStyle(.plain)
     }
 
     private var statsRow: some View {
@@ -204,18 +255,6 @@ struct GameListView: View {
         .ignoresSafeArea()
     }
 
-    private var appearanceMenu: some View {
-        Menu {
-            Picker("Appearance", selection: $appearanceRaw) {
-                ForEach(Appearance.allCases) { option in
-                    Label(option.label, systemImage: option.iconName)
-                        .tag(option.rawValue)
-                }
-            }
-        } label: {
-            Image(systemName: appearance.iconName)
-        }
-    }
 }
 
 /// Card-style game row: cover, meta, code count.

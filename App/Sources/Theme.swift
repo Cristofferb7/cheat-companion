@@ -80,6 +80,9 @@ enum Theme {
         case "pokemon-yellow-us": return Color(hex: 0xD97706)
         case "pokemon-ruby-us": return Color(hex: 0xB91C1C)
         case "pokemon-heartgold-us": return Color(hex: 0xB7791F)
+        case "pokemon-leafgreen-us": return Color(hex: 0x16A34A)
+        case "pokemon-red-blue-us": return Color(hex: 0x2447C9)
+        case "pokemon-soulsilver-us": return Color(hex: 0x64748B)
         default: return color(for: game.system)
         }
     }
@@ -88,6 +91,41 @@ enum Theme {
     static func coverImage(for game: GameInfo) -> Image? {
         guard UIImage(named: "cover-\(game.slug)") != nil else { return nil }
         return Image("cover-\(game.slug)")
+    }
+}
+
+/// Rough grouping for the game-detail list, derived from the code name so the
+/// data schema stays unchanged. Misclassification is cosmetic only.
+enum CodeCategory: String, CaseIterable, Identifiable {
+    case items = "Items & Money"
+    case encounters = "Encounters"
+    case training = "Training & Battle"
+    case movement = "Movement"
+    case other = "Other"
+
+    var id: String { rawValue }
+
+    var iconName: String {
+        switch self {
+        case .items: return "bag.fill"
+        case .encounters: return "sparkles"
+        case .training: return "chart.line.uptrend.xyaxis"
+        case .movement: return "figure.walk"
+        case .other: return "square.grid.2x2"
+        }
+    }
+
+    static func classify(_ code: CheatCode) -> CodeCategory {
+        let n = code.name.lowercased()
+        if ["money", "cash", "candy", "candies", "ball", "item", "medicine", "coin"]
+            .contains(where: n.contains) { return .items }
+        if ["walk", "teleport", "warp", "ghost"]
+            .contains(where: n.contains) { return .movement }
+        if ["shiny", "encounter", "battles", "wild", "catch", "rebattle", "mew"]
+            .contains(where: n.contains) { return .encounters }
+        if ["exp", "level", "pp", "health", "hp"]
+            .contains(where: n.contains) { return .training }
+        return .other
     }
 }
 

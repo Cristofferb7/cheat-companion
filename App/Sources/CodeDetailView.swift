@@ -56,6 +56,17 @@ struct CodeDetailView: View {
                 }
             }
 
+            Section {
+                Toggle(isOn: Binding(
+                    get: { favorites.isAdded(file.game, code) },
+                    set: { _ in favorites.toggleAdded(file.game, code) }
+                )) {
+                    Label("Added in Delta", systemImage: "checkmark.circle")
+                }
+            } footer: {
+                Text("Track which cheats you've already entered — marked codes show a green check in the list.")
+            }
+
             Section("Provenance") {
                 LabeledContent("Device", value: code.device.displayName)
                 LabeledContent("Region", value: code.region)
@@ -104,6 +115,7 @@ struct CodeDetailView: View {
 
                 Button {
                     UIPasteboard.general.string = target.code
+                    UINotificationFeedbackGenerator().notificationOccurred(.success)
                     withAnimation(.snappy) { copiedID = target.id }
                     if !deltaLink.isEmpty, let url = URL(string: deltaLink) {
                         UIApplication.shared.open(url)

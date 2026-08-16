@@ -9,6 +9,7 @@ struct GameDetailView: View {
     @AppStorage private var selectedRevision: String
     @AppStorage private var deltaLink: String
     @State private var showLinkHelp = false
+    @EnvironmentObject private var favorites: Favorites
 
     init(file: GameFile) {
         self.file = file
@@ -62,15 +63,22 @@ struct GameDetailView: View {
                 Text("In Delta: long-press the game → Share → Copy Deep Link, then paste it here.")
             }
 
-            Section("Cheat codes") {
-                ForEach(file.codes.filter { !$0.isMasterCode }) { code in
-                    NavigationLink {
-                        CodeDetailView(file: file, code: code,
-                                       selectedRevision: selectedRevision,
-                                       deltaLink: deltaLink)
-                    } label: {
-                        CodeRow(code: code, selectedRevision: selectedRevision)
+            let grouped = Dictionary(grouping: file.codes.filter { !$0.isMasterCode },
+                                     by: CodeCategory.classify)
+            ForEach(CodeCategory.allCases.filter { grouped[$0] != nil }) { category in
+                Section {
+                    ForEach(grouped[category] ?? []) { code in
+                        NavigationLink {
+                            CodeDetailView(file: file, code: code,
+                                           selectedRevision: selectedRevision,
+                                           deltaLink: deltaLink)
+                        } label: {
+                            CodeRow(code: code, selectedRevision: selectedRevision,
+                                    added: favorites.isAdded(file.game, code))
+                        }
                     }
+                } header: {
+                    Label(category.rawValue, systemImage: category.iconName)
                 }
             }
         }
@@ -94,6 +102,7 @@ struct GameDetailView: View {
 struct CodeRow: View {
     let code: CheatCode
     let selectedRevision: String
+    var added: Bool = false
 
     private var revisionWarning: String? {
         if code.romRevision == "unspecified" {
@@ -111,9 +120,20 @@ struct CodeRow: View {
         return nil
     }
 
+    private var isMismatched: Bool {
+        revisionWarning?.hasPrefix("Made for") == true
+    }
+
     var body: some View {
         VStack(alignment: .leading, spacing: 3) {
-            Text(code.name).font(.body)
+            HStack(spacing: 6) {
+                Text(code.name).font(.body)
+                if added {
+                    Image(systemName: "checkmark.circle.fill")
+                        .font(.caption)
+                        .foregroundStyle(.green)
+                }
+            }
             HStack(spacing: 6) {
                 Text(code.device.displayName)
                     .font(.caption2)
@@ -136,6 +156,8 @@ struct CodeRow: View {
                     .foregroundStyle(.orange)
             }
         }
+        // "Works on your ROM": codes made for a different revision fade back.
+        .opacity(isMismatched ? 0.5 : 1)
     }
 }
 

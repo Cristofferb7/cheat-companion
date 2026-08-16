@@ -1,0 +1,159 @@
+{
+  "schema_version": 1,
+  "game": {
+    "slug": "pokemon-red-blue-us",
+    "title": "Pokémon Red / Blue",
+    "system": "gb",
+    "region": "US",
+    "revisions": ["unspecified"],
+    "revision_note": "Red and Blue share one code set — no fetched source gives different codes per version. Sources label these codes 'USA/Europe'."
+  },
+  "codes": [
+    {
+      "id": "redblue-infinite-money",
+      "name": "Infinite Money",
+      "description": "Maxes out your money. Enter all three lines together.",
+      "device": "gameshark_gb",
+      "code": "019947D3\n019948D3\n019949D3",
+      "region": "US",
+      "rom_revision": "unspecified",
+      "requires_master_code": false,
+      "master_code_id": null,
+      "is_master_code": false,
+      "activation": null,
+      "reliability": "source_verified",
+      "side_effects": [
+        "Enable only once in-game and disable before saving."
+      ],
+      "source_url": "https://almarsguides.com/retro/walkthroughs/GameBoy/Games/PokemonBlue/Gameshark/",
+      "last_verified": "2026-08-16"
+    },
+    {
+      "id": "redblue-no-random-battles",
+      "name": "No Random Battles",
+      "description": "Disables random wild encounters in grass, caves, and while surfing.",
+      "device": "gameshark_gb",
+      "code": "01033CD1",
+      "region": "US",
+      "rom_revision": "unspecified",
+      "requires_master_code": false,
+      "master_code_id": null,
+      "is_master_code": false,
+      "activation": null,
+      "reliability": "source_verified",
+      "side_effects": [],
+      "source_url": "https://almarsguides.com/retro/walkthroughs/GameBoy/Games/PokemonBlue/Gameshark/",
+      "last_verified": "2026-08-16"
+    },
+    {
+      "id": "redblue-walk-through-walls",
+      "name": "Walk Through Walls",
+      "description": "Walk through walls and solid obstacles. Note: a one-digit variant (010138CD) also circulates — if this one misbehaves, that may be why.",
+      "device": "gameshark_gb",
+      "code": "010139CD",
+      "region": "US",
+      "rom_revision": "unspecified",
+      "requires_master_code": false,
+      "master_code_id": null,
+      "is_master_code": false,
+      "activation": null,
+      "reliability": "community_reported",
+      "side_effects": [
+        "Can crash the game — save before activating and never save with it on."
+      ],
+      "source_url": "https://almarsguides.com/retro/walkthroughs/GameBoy/Games/PokemonBlue/Gameshark/",
+      "last_verified": "2026-08-16"
+    },
+    {
+      "id": "redblue-catch-trainer-pokemon",
+      "name": "Catch Other Trainers' Pokémon",
+      "description": "Throw Poké Balls at an opposing trainer's Pokémon and catch them.",
+      "device": "gameshark_gb",
+      "code": "010157D0",
+      "region": "US",
+      "rom_revision": "unspecified",
+      "requires_master_code": false,
+      "master_code_id": null,
+      "is_master_code": false,
+      "activation": null,
+      "reliability": "community_reported",
+      "side_effects": [],
+      "source_url": "https://almarsguides.com/retro/walkthroughs/GameBoy/Games/PokemonBlue/Gameshark/",
+      "last_verified": "2026-08-16"
+    },
+    {
+      "id": "redblue-master-ball-mart",
+      "name": "Buy Master Balls at Poké Mart",
+      "description": "Replaces the first Poké Mart slot with Master Balls, free of charge.",
+      "device": "gameshark_gb",
+      "code": "01017CCF",
+      "region": "US",
+      "rom_revision": "unspecified",
+      "requires_master_code": false,
+      "master_code_id": null,
+      "is_master_code": false,
+      "activation": "Buy from any Poké Mart",
+      "reliability": "source_verified",
+      "side_effects": [
+        "Disable before saving."
+      ],
+      "source_url": "https://cooltrainer.org/bpu/red-blue-yellow-gameshark/",
+      "last_verified": "2026-08-16"
+    },
+    {
+      "id": "redblue-rare-candy-mart",
+      "name": "Buy Rare Candies at Poké Mart",
+      "description": "Replaces the first Poké Mart slot with Rare Candies (priced $4800 — pair with the money code).",
+      "device": "gameshark_gb",
+      "code": "01287CCF",
+      "region": "US",
+      "rom_revision": "unspecified",
+      "requires_master_code": false,
+      "master_code_id": null,
+      "is_master_code": false,
+      "activation": "Buy from any Poké Mart",
+      "reliability": "source_verified",
+      "side_effects": [
+        "Disable before saving."
+      ],
+      "source_url": "https://gaminggorilla.com/pokemon-blue-cheats/",
+      "last_verified": "2026-08-16"
+    },
+    {
+      "id": "redblue-infinite-pp",
+      "name": "Infinite PP (in battle, moves 1–4)",
+      "description": "Infinite PP for the active Pokémon's move slots 1–4, one line per slot — use whichever you want.",
+      "device": "gameshark_gb",
+      "code": "01282DD0\n01282ED0\n01282FD0\n012830D0",
+      "region": "US",
+      "rom_revision": "unspecified",
+      "requires_master_code": false,
+      "master_code_id": null,
+      "is_master_code": false,
+      "activation": null,
+      "reliability": "community_reported",
+      "side_effects": [],
+      "source_url": "https://cooltrainer.org/bpu/red-blue-yellow-gameshark/",
+      "last_verified": "2026-08-16"
+    },
+    {
+      "id": "redblue-wild-level-99",
+      "name": "Wild Pokémon at Level 99",
+      "description": "Wild Pokémon appear at level 99 (the highest verified level code — no verified level-100 code exists).",
+      "device": "gameshark_gb",
+      "code": "016327D1",
+      "region": "US",
+      "rom_revision": "unspecified",
+      "requires_master_code": false,
+      "master_code_id": null,
+      "is_master_code": false,
+      "activation": null,
+      "reliability": "source_verified",
+      "side_effects": [
+        "After catching, save and remove the code — leaving level modifiers on can glitch battles."
+      ],
+      "source_url": "https://gamegenie.com/cheats/gameshark/gbcolor/pokemon.html",
+      "last_verified": "2026-08-16"
+    }
+  ]
+}

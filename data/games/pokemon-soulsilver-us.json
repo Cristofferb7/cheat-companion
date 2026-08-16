@@ -1,0 +1,159 @@
+{
+  "schema_version": 1,
+  "game": {
+    "slug": "pokemon-soulsilver-us",
+    "title": "Pokémon SoulSilver",
+    "system": "nds",
+    "region": "US",
+    "revisions": ["IPGE-2D5118CA"],
+    "revision_note": "US SoulSilver game ID IPGE. SoulSilver codes are NOT interchangeable with HeartGold's (IPKE) even where they look similar."
+  },
+  "codes": [
+    {
+      "id": "soulsilver-max-cash",
+      "name": "Max Cash",
+      "description": "Sets player money to 999,999.",
+      "device": "action_replay_ds",
+      "code": "94000130 FCFF0000\n62111880 00000000\nB2111880 00000000\n00000088 000F423F\nD2000000 00000000",
+      "region": "US",
+      "rom_revision": "IPGE-2D5118CA",
+      "requires_master_code": false,
+      "master_code_id": null,
+      "is_master_code": false,
+      "activation": "Press L+R",
+      "reliability": "source_verified",
+      "side_effects": [],
+      "source_url": "https://www.cheathappens.com/15664-Nintendo_DS-Pokemon_SoulSilver_cheats",
+      "last_verified": "2026-08-16"
+    },
+    {
+      "id": "soulsilver-900x-medicine",
+      "name": "900x All Medicine (incl. Rare Candies)",
+      "description": "Fills the Medicine pocket with 900 of every medicine item — Rare Candy included.",
+      "device": "action_replay_ds",
+      "code": "94000130 FCFF0000\n62111880 00000000\nB2111880 00000000\nD5000000 03840011\nC0000000 00000025\nD6000000 00000B74\nD4000000 00000001\nD2000000 00000000",
+      "region": "US",
+      "rom_revision": "IPGE-2D5118CA",
+      "requires_master_code": false,
+      "master_code_id": null,
+      "is_master_code": false,
+      "activation": "Press L+R, then check your bag",
+      "reliability": "source_verified",
+      "side_effects": [
+        "Overwrites the entire Medicine pocket — unwanted items must be tossed manually."
+      ],
+      "source_url": "https://www.cheathappens.com/15664-Nintendo_DS-Pokemon_SoulSilver_cheats",
+      "last_verified": "2026-08-16"
+    },
+    {
+      "id": "soulsilver-900x-pokeballs",
+      "name": "900x All Poké Balls",
+      "description": "Fills the Ball pocket with 900 of each ball type, including the Apricorn balls. Three-part code — all 26 lines must be entered as ONE cheat.",
+      "device": "action_replay_ds",
+      "code": "94000130 FCFF0000\n62111880 00000000\nB2111880 00000000\nD5000000 00000384\nC0000000 00000017\nD7000000 00000D16\nDC000000 00000002\nD2000000 00000000\n94000130 FCFF0000\n62111880 00000000\nB2111880 00000000\nD5000000 00000001\nC0000000 0000000F\nD7000000 00000D14\nD4000000 00000001\nDC000000 00000002\nD2000000 00000000\n94000130 FCFF0000\n62111880 00000000\nB2111880 00000000\nD5000000 000001EC\nC0000000 00000007\nD7000000 00000D54\nD4000000 00000001\nDC000000 00000002\nD2000000 00000000",
+      "region": "US",
+      "rom_revision": "IPGE-2D5118CA",
+      "requires_master_code": false,
+      "master_code_id": null,
+      "is_master_code": false,
+      "activation": "Press L+R, then check your bag",
+      "reliability": "community_reported",
+      "side_effects": [
+        "Overwrites the entire Ball pocket, including Apricorn ball slots.",
+        "Enter the full 26 lines — a truncated block write can corrupt the bag."
+      ],
+      "source_url": "https://www.cheathappens.com/15664-Nintendo_DS-Pokemon_SoulSilver_cheats",
+      "last_verified": "2026-08-16"
+    },
+    {
+      "id": "soulsilver-walk-through-walls",
+      "name": "Walk Through Walls",
+      "description": "Hold L to walk through walls; release L for normal collision.",
+      "device": "action_replay_ds",
+      "code": "9205DAA2 00000200\n1205DAA2 00001C20\nD2000000 00000000\n94000130 FDFF0000\n9205DAA2 00001C20\n1205DAA2 00000200\nD2000000 00000000",
+      "region": "US",
+      "rom_revision": "IPGE-2D5118CA",
+      "requires_master_code": false,
+      "master_code_id": null,
+      "is_master_code": false,
+      "activation": "Hold L",
+      "reliability": "source_verified",
+      "side_effects": [
+        "Do not save in an unknown/unreachable area — saving out of bounds can strand or corrupt the save."
+      ],
+      "source_url": "https://www.cheathappens.com/15664-Nintendo_DS-Pokemon_SoulSilver_cheats",
+      "last_verified": "2026-08-16"
+    },
+    {
+      "id": "soulsilver-double-exp",
+      "name": "Double EXP",
+      "description": "Doubles experience gained. Two-part code — enter all 12 lines as one cheat.",
+      "device": "action_replay_ds",
+      "code": "A4000130 FEFF0000\n1206FADA 00000068\n1206FB2E 0000E03C\n0206FB30 07808960\n1206FB44 00000F85\nD2000000 00000000\n94000130 FEFF0000\n1206FADA 0000006C\n1206FB2E 00002002\n0206FB30 E03A4345\n1206FB44 00008965\nD2000000 00000000",
+      "region": "US",
+      "rom_revision": "IPGE-2D5118CA",
+      "requires_master_code": false,
+      "master_code_id": null,
+      "is_master_code": false,
+      "activation": "Hold R after battle (while EXP is awarded)",
+      "reliability": "source_verified",
+      "side_effects": [],
+      "source_url": "https://www.cheathappens.com/15664-Nintendo_DS-Pokemon_SoulSilver_cheats",
+      "last_verified": "2026-08-16"
+    },
+    {
+      "id": "soulsilver-shiny-wild",
+      "name": "Shiny Wild Pokémon",
+      "description": "Wild encounters are shiny while enabled (patches the encounter generation routine). 20-line ASM code — enter it complete and exactly.",
+      "device": "action_replay_ds",
+      "code": "5206E128 4284FE81\nE2000108 00000060\n021D15A8 41C64E6D\n00006073 02111880\nE92D40F0 E51F0010\nE5900000 E1D018B4\nE1D028B6 E0217002\nE1A071A7 E51F1034\nE51F2034 E51F3034\nE5910000 E0243290\nE0253294 E0246005\nE1A069A6 E1560007\n11A00004 1AFFFFF8\nE5810000 E8BD80F0\n1206E116 0000F792\nE206E118 00000010\nF7B1E800 1C05FE13\nFE10F7B1 43050400\n0206E128 E0001C28\nD0000000 00000000",
+      "region": "US",
+      "rom_revision": "IPGE-2D5118CA",
+      "requires_master_code": false,
+      "master_code_id": null,
+      "is_master_code": false,
+      "activation": null,
+      "reliability": "source_verified",
+      "side_effects": [
+        "Do NOT breed Pokémon caught with shiny cheats.",
+        "Enter all 20 lines exactly — a partial ASM block can crash or corrupt the game."
+      ],
+      "source_url": "http://www.cheatcodes.com/guide/lots-of-action-replay-codes-pokemon-soulsilver-version-nintendo-ds-90439/",
+      "last_verified": "2026-08-16"
+    },
+    {
+      "id": "soulsilver-rebattle-trainers",
+      "name": "Rebattle Trainers",
+      "description": "Hold L and talk to a trainer to battle them again.",
+      "device": "action_replay_ds",
+      "code": "02040EA8 F7FF68E0\n94000130 FDFF0000\n02040EA8 E0002000\nD0000000 00000000",
+      "region": "US",
+      "rom_revision": "IPGE-2D5118CA",
+      "requires_master_code": false,
+      "master_code_id": null,
+      "is_master_code": false,
+      "activation": "Hold L while talking to a trainer",
+      "reliability": "source_verified",
+      "side_effects": [],
+      "source_url": "http://www.cheatcodes.com/guide/lots-of-action-replay-codes-pokemon-soulsilver-version-nintendo-ds-90439/",
+      "last_verified": "2026-08-16"
+    },
+    {
+      "id": "soulsilver-restore-health",
+      "name": "Restore Health in battle",
+      "description": "Press START during battle to restore your Pokémon's HP.",
+      "device": "action_replay_ds",
+      "code": "94000130 FFF70000\n62111880 00000000\nB2111880 00000000\n10049E60 000003E7\n10049E64 000003E7\n10049FE0 000003E7\n10049FE4 000003E7\nD2000000 00000000",
+      "region": "US",
+      "rom_revision": "IPGE-2D5118CA",
+      "requires_master_code": false,
+      "master_code_id": null,
+      "is_master_code": false,
+      "activation": "Press START during battle",
+      "reliability": "source_verified",
+      "side_effects": [],
+      "source_url": "https://www.cheathappens.com/15664-Nintendo_DS-Pokemon_SoulSilver_cheats",
+      "last_verified": "2026-08-16"
+    }
+  ]
+}

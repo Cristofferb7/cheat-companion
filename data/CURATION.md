@@ -1,5 +1,24 @@
 # Curation notes — what's in, what's out, and why
 
+## 2026-08-16, second batch (LeafGreen, SoulSilver, Red/Blue)
+
+- **LeafGreen**: v1.0 and v1.1 need entirely different master codes — both
+  ship (CodeBreaker enabler + AR master for v1.0; combined master+Anti-DMA
+  for v1.1) and every code references the right one. Omitted: the MadCatz
+  "Gain 5000 Exp" (needs a MadCatz-specific master we don't carry) and a
+  walk-through-walls variant whose line breaks couldn't be recovered
+  unambiguously.
+- **SoulSilver**: primary source is Cheat Happens' US list cross-checked
+  against two other sites; note their page header shows HeartGold's game ID
+  (site labeling error) — the codes themselves match IPGE sources. Ball-
+  pocket code's 2nd/3rd blocks are single-source → `community_reported`.
+- **Red/Blue**: one shared code set (no source distinguishes the versions).
+  Omitted: the famous Mew encounter code (never seen verbatim on a fetchable
+  page, and a conflicting variant circulates) and an "Infinite PP" code whose
+  own source labels it contradictorily. Walk Through Walls has two one-digit
+  variants in the wild — the two-page-verified one ships, flagged
+  `community_reported` with the variant noted.
+
 ## 2026-08-16 additions (Yellow, Ruby, HeartGold)
 
 - **Yellow**: money-code middle line has a circulating D0-vs-D3 typo; the

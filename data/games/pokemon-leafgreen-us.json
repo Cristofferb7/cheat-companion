@@ -1,0 +1,219 @@
+{
+  "schema_version": 1,
+  "game": {
+    "slug": "pokemon-leafgreen-us",
+    "title": "Pokémon LeafGreen",
+    "system": "gba",
+    "region": "US",
+    "revisions": ["v1.0", "v1.1"],
+    "revision_note": "LeafGreen v1.0 and v1.1 use different master codes and different addresses for most cheats — codes are NOT interchangeable between revisions, and LeafGreen codes are not identical to FireRed's."
+  },
+  "codes": [
+    {
+      "id": "leafgreen-cb-enabler",
+      "name": "CodeBreaker Enable Code (v1.0)",
+      "description": "Must-be-on enabler for CodeBreaker codes on v1.0 (item, money and modifier codes need it). Add as its own cheat and enable it.",
+      "device": "codebreaker",
+      "code": "0000BE99 000A\n1003DAE6 0007",
+      "region": "US",
+      "rom_revision": "v1.0",
+      "requires_master_code": false,
+      "master_code_id": null,
+      "is_master_code": true,
+      "activation": null,
+      "reliability": "source_verified",
+      "side_effects": [],
+      "source_url": "https://gamehacking.org/game/5634",
+      "last_verified": "2026-08-16"
+    },
+    {
+      "id": "leafgreen-master-v10",
+      "name": "Master Code (v1.0)",
+      "description": "Must-be-on master code for GameShark v3 / Action Replay codes on v1.0. Add as its own cheat and enable it.",
+      "device": "action_replay",
+      "code": "72BC6DFB E9CA5465\n56671F3A 6F4F4D6B",
+      "region": "US",
+      "rom_revision": "v1.0",
+      "requires_master_code": false,
+      "master_code_id": null,
+      "is_master_code": true,
+      "activation": null,
+      "reliability": "source_verified",
+      "side_effects": [],
+      "source_url": "https://gamehacking.org/game/5634",
+      "last_verified": "2026-08-16"
+    },
+    {
+      "id": "leafgreen-master-v11",
+      "name": "Master Code + Anti-DMA (v1.1)",
+      "description": "Required pairing for ALL v1.1 cheats: master code (first two lines) plus Anti-DMA (last two lines). Enter as one cheat, or as two cheats both enabled.",
+      "device": "action_replay",
+      "code": "E6A003D6 8110DDD5\nA47FB2DC 1AF3CA86\n24C35E88 037C3033\n78DA95DF 44018CB4",
+      "region": "US",
+      "rom_revision": "v1.1",
+      "requires_master_code": false,
+      "master_code_id": null,
+      "is_master_code": true,
+      "activation": null,
+      "reliability": "source_verified",
+      "side_effects": [],
+      "source_url": "https://www.pokemoncoders.com/pokemon-leaf-green-cheats/",
+      "last_verified": "2026-08-16"
+    },
+    {
+      "id": "leafgreen-walk-through-walls-v10",
+      "name": "Walk Through Walls (v1.0)",
+      "description": "Walk through walls, trees and buildings. Enter both lines as one cheat.",
+      "device": "gameshark_v3",
+      "code": "509197D3 542975F4\n78DA95DF 44018CB4",
+      "region": "US",
+      "rom_revision": "v1.0",
+      "requires_master_code": true,
+      "master_code_id": "leafgreen-master-v10",
+      "is_master_code": false,
+      "activation": null,
+      "reliability": "source_verified",
+      "side_effects": [
+        "Stacking multiple active cheats can cause crashes, freezes and save corruption — disable after use."
+      ],
+      "source_url": "https://www.pokemoncoders.com/pokemon-leaf-green-cheats/",
+      "last_verified": "2026-08-16"
+    },
+    {
+      "id": "leafgreen-walk-through-walls-v11",
+      "name": "Walk Through Walls (v1.1)",
+      "description": "Walk through walls for v1.1 ROMs — different addresses than the v1.0 code; do not mix revisions.",
+      "device": "action_replay",
+      "code": "51A9F4C9 A5AE347C\n8E883EFF 92E9660D",
+      "region": "US",
+      "rom_revision": "v1.1",
+      "requires_master_code": true,
+      "master_code_id": "leafgreen-master-v11",
+      "is_master_code": false,
+      "activation": null,
+      "reliability": "community_reported",
+      "side_effects": [],
+      "source_url": "https://gamehacking.org/game/5635",
+      "last_verified": "2026-08-16"
+    },
+    {
+      "id": "leafgreen-rare-candy-pc-v10",
+      "name": "Rare Candy in PC (v1.0)",
+      "description": "Fills the PC item slot with Rare Candies. Withdraw at a Pokémon Center PC.",
+      "device": "codebreaker",
+      "code": "82025840 0044",
+      "region": "US",
+      "rom_revision": "v1.0",
+      "requires_master_code": true,
+      "master_code_id": "leafgreen-cb-enabler",
+      "is_master_code": false,
+      "activation": "Pokémon Center PC → Item Storage → Withdraw",
+      "reliability": "source_verified",
+      "side_effects": [
+        "Quantity may display as 0 in the PC — withdraw anyway.",
+        "Overwrites the first PC item slot — move anything stored there first.",
+        "Uses the same slot address as the Master Ball code — enable only one at a time."
+      ],
+      "source_url": "https://www.pokemoncoders.com/pokemon-leaf-green-cheats/",
+      "last_verified": "2026-08-16"
+    },
+    {
+      "id": "leafgreen-master-ball-pc-v10",
+      "name": "Master Ball in PC (v1.0)",
+      "description": "Fills the PC item slot with Master Balls. Withdraw at a Pokémon Center PC.",
+      "device": "codebreaker",
+      "code": "82025840 0001",
+      "region": "US",
+      "rom_revision": "v1.0",
+      "requires_master_code": true,
+      "master_code_id": "leafgreen-cb-enabler",
+      "is_master_code": false,
+      "activation": "Pokémon Center PC → Item Storage → Withdraw",
+      "reliability": "source_verified",
+      "side_effects": [
+        "Quantity may display as 0 in the PC — withdraw anyway.",
+        "Uses the same slot address as the Rare Candy code — enable only one at a time."
+      ],
+      "source_url": "https://www.pokemoncoders.com/pokemon-leaf-green-cheats/",
+      "last_verified": "2026-08-16"
+    },
+    {
+      "id": "leafgreen-money-v10",
+      "name": "Max Money (v1.0)",
+      "description": "Press B + Start in-game to max out your money.",
+      "device": "codebreaker",
+      "code": "74000130 03F5\n820257BC 423F\n74000130 03F5\n820257BE 000F",
+      "region": "US",
+      "rom_revision": "v1.0",
+      "requires_master_code": true,
+      "master_code_id": "leafgreen-cb-enabler",
+      "is_master_code": false,
+      "activation": "Press B + Start",
+      "reliability": "source_verified",
+      "side_effects": [
+        "FireRed/LeafGreen are unstable with many codes — enable one at a time, save, then disable."
+      ],
+      "source_url": "https://gamehacking.org/game/5634",
+      "last_verified": "2026-08-16"
+    },
+    {
+      "id": "leafgreen-shiny-v10",
+      "name": "Shiny Wild Pokémon (v1.0)",
+      "description": "All wild encounters are shiny. Enter all four lines as one cheat.",
+      "device": "gameshark_v3",
+      "code": "A74320F4 175B5B22\n18452A7D DDE55BCC\n7FE56658 F483AC73\nF8B8373C BAB2B56F",
+      "region": "US",
+      "rom_revision": "v1.0",
+      "requires_master_code": true,
+      "master_code_id": "leafgreen-master-v10",
+      "is_master_code": false,
+      "activation": null,
+      "reliability": "source_verified",
+      "side_effects": [
+        "May lock the Pokémon's nature and gender (all-female encounters reported).",
+        "Do NOT breed Pokémon caught with this cheat — bad-egg risk.",
+        "Turn the cheat off before saving."
+      ],
+      "source_url": "https://www.pokemoncoders.com/pokemon-leaf-green-cheats/",
+      "last_verified": "2026-08-16"
+    },
+    {
+      "id": "leafgreen-shiny-v11",
+      "name": "Shiny Wild Pokémon (v1.1)",
+      "description": "Shiny wild encounters for v1.1 ROMs, re-tested by the source site.",
+      "device": "action_replay",
+      "code": "1A2B80ED 222B0D7C\n65439170 93645A77",
+      "region": "US",
+      "rom_revision": "v1.1",
+      "requires_master_code": true,
+      "master_code_id": "leafgreen-master-v11",
+      "is_master_code": false,
+      "activation": null,
+      "reliability": "community_reported",
+      "side_effects": [
+        "Same caveats as the v1.0 shiny code: possible nature/gender lock; do not breed cheat-caught Pokémon."
+      ],
+      "source_url": "https://www.pokemoncoders.com/pokemon-leaf-green-cheats/",
+      "last_verified": "2026-08-16"
+    },
+    {
+      "id": "leafgreen-no-random-battles-v10",
+      "name": "No Random Battles (v1.0)",
+      "description": "Disables random wild encounters. Explicitly does NOT work on v1.1.",
+      "device": "codebreaker",
+      "code": "A202166E FF00\n820255AC 0000",
+      "region": "US",
+      "rom_revision": "v1.0",
+      "requires_master_code": true,
+      "master_code_id": "leafgreen-cb-enabler",
+      "is_master_code": false,
+      "activation": null,
+      "reliability": "community_reported",
+      "side_effects": [
+        "Reported not to work on v1.1, with mixed reports on some emulators."
+      ],
+      "source_url": "https://www.pokemoncoders.com/pokemon-leaf-green-cheats/",
+      "last_verified": "2026-08-16"
+    }
+  ]
+}
