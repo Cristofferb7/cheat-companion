@@ -30,6 +30,22 @@ open CheatCompanion.xcodeproj
 
 Data changes need no Xcode: edit the JSON, run `swift run checks`, commit.
 
+## Adding a game
+
+1. Create `data/games/<slug>.json` following `data/SCHEMA.md` (copy an
+   existing file of the same system as a starting point). Every code needs a
+   real `source_url` — codes from memory are how saves get corrupted.
+2. Run `swift run checks` — fix anything it flags. It validates hex format,
+   master-code references, regions, and sources.
+3. Optional cover: add a design block in `App/Resources/render-covers.swift`
+   and render it, or drop any portrait image at
+   `App/Resources/Assets.xcassets/cover-<slug>.imageset/cover.png`.
+   No cover = automatic colored monogram card.
+4. Optional accent: add the slug to `Theme.gameColor(for:)`. Without it the
+   game inherits its console's color.
+5. Rebuild. The game list, search, and favorites pick the new game up
+   automatically — there is no game registry to edit.
+
 ## Data rules (the short version)
 
 Every code: exact source URL, region, ROM revision, reliability level, and

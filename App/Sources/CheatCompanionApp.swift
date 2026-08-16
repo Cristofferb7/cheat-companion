@@ -31,10 +31,13 @@ struct RootView: View {
         }
     }
 
+    @StateObject private var favorites = Favorites()
+
     var body: some View {
         switch state {
         case .loaded(let library):
             GameListView(library: library)
+                .environmentObject(favorites)
         case .failed(let message):
             ContentUnavailableView(
                 "Data failed integrity checks",

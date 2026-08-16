@@ -1,0 +1,182 @@
+{
+  "schema_version": 1,
+  "game": {
+    "slug": "pokemon-yellow-us",
+    "title": "Pokémon Yellow",
+    "system": "gb",
+    "region": "US",
+    "revisions": ["unspecified"],
+    "revision_note": "Sources label these codes 'USA/Europe' without distinguishing Yellow's ROM revisions. If a code misbehaves, revision differences may be why."
+  },
+  "codes": [
+    {
+      "id": "yellow-infinite-money",
+      "name": "Infinite Money",
+      "description": "Maxes out the player's money. Enter all three lines together. Note: some newer sites print the middle line as 019947D0 — the D3 form matches the older dedicated code databases.",
+      "device": "gameshark_gb",
+      "code": "019946D3\n019947D3\n019948D3",
+      "region": "US",
+      "rom_revision": "unspecified",
+      "requires_master_code": false,
+      "master_code_id": null,
+      "is_master_code": false,
+      "activation": null,
+      "reliability": "source_verified",
+      "side_effects": [
+        "Load and save your game with all cheats OFF — saving with cheats active can corrupt the save."
+      ],
+      "source_url": "https://almarsguides.com/retro/walkthroughs/gameboy/games/pokemonyellow/gameshark/",
+      "last_verified": "2026-08-16"
+    },
+    {
+      "id": "yellow-rare-candy-enabler",
+      "name": "Rare Candy enabler",
+      "description": "Enabler line that sources say must be entered and active before the Rare Candy code works. Add it as its own cheat in Delta and enable both.",
+      "device": "gameshark_gb",
+      "code": "01281DD3",
+      "region": "US",
+      "rom_revision": "unspecified",
+      "requires_master_code": false,
+      "master_code_id": null,
+      "is_master_code": true,
+      "activation": null,
+      "reliability": "source_verified",
+      "side_effects": [],
+      "source_url": "https://www.esports.net/wiki/guides/pokemon-yellow-cheat-codes/",
+      "last_verified": "2026-08-16"
+    },
+    {
+      "id": "yellow-rare-candy-pc",
+      "name": "Unlimited Rare Candies in PC",
+      "description": "Fills a PC item-storage slot with Rare Candies. Requires the Rare Candy enabler code active first.",
+      "device": "gameshark_gb",
+      "code": "01281ED3",
+      "region": "US",
+      "rom_revision": "unspecified",
+      "requires_master_code": true,
+      "master_code_id": "yellow-rare-candy-enabler",
+      "is_master_code": false,
+      "activation": "Pokémon Center PC → Item Storage → Withdraw",
+      "reliability": "source_verified",
+      "side_effects": [
+        "Activate no more than one or two cheats at once; never save with cheats enabled."
+      ],
+      "source_url": "https://www.esports.net/wiki/guides/pokemon-yellow-cheat-codes/",
+      "last_verified": "2026-08-16"
+    },
+    {
+      "id": "yellow-master-ball-mart",
+      "name": "Buy Master Balls at Poké Mart",
+      "description": "Makes Master Balls purchasable from the Poké Mart's first slot.",
+      "device": "gameshark_gb",
+      "code": "01017CCF",
+      "region": "US",
+      "rom_revision": "unspecified",
+      "requires_master_code": false,
+      "master_code_id": null,
+      "is_master_code": false,
+      "activation": "Buy from any Poké Mart",
+      "reliability": "source_verified",
+      "side_effects": [
+        "Disable after buying; don't save with the cheat active."
+      ],
+      "source_url": "https://retrododo.com/best-pokemon-yellow-gameshark-cheats/",
+      "last_verified": "2026-08-16"
+    },
+    {
+      "id": "yellow-infinite-pp",
+      "name": "Infinite PP (first party Pokémon)",
+      "description": "Infinite PP for your first party Pokémon, one line per move slot 1–4. An alternative set (01282CD0…01282FD0) circulates on other sites — the two are not interchangeable.",
+      "device": "gameshark_gb",
+      "code": "01FF87D1\n01FF88D1\n01FF89D1\n01FF8AD1",
+      "region": "US",
+      "rom_revision": "unspecified",
+      "requires_master_code": false,
+      "master_code_id": null,
+      "is_master_code": false,
+      "activation": null,
+      "reliability": "community_reported",
+      "side_effects": [
+        "Don't save with cheats enabled."
+      ],
+      "source_url": "https://gamegenie.com/cheats/gameshark/gbcolor/pokemon_yellow.html",
+      "last_verified": "2026-08-16"
+    },
+    {
+      "id": "yellow-walk-through-walls",
+      "name": "Walk Through Walls",
+      "description": "Walk through walls, obstacles and barriers.",
+      "device": "gameshark_gb",
+      "code": "010138CD",
+      "region": "US",
+      "rom_revision": "unspecified",
+      "requires_master_code": false,
+      "master_code_id": null,
+      "is_master_code": false,
+      "activation": null,
+      "reliability": "source_verified",
+      "side_effects": [
+        "Toggle on only when needed and turn off after use; never load or save with cheats active."
+      ],
+      "source_url": "https://almarsguides.com/retro/walkthroughs/gameboy/games/pokemonyellow/gameshark/",
+      "last_verified": "2026-08-16"
+    },
+    {
+      "id": "yellow-no-random-battles",
+      "name": "No Random Battles",
+      "description": "Disables random wild Pokémon encounters.",
+      "device": "gameshark_gb",
+      "code": "01033BD1",
+      "region": "US",
+      "rom_revision": "unspecified",
+      "requires_master_code": false,
+      "master_code_id": null,
+      "is_master_code": false,
+      "activation": null,
+      "reliability": "source_verified",
+      "side_effects": [
+        "Don't save with the cheat active."
+      ],
+      "source_url": "https://almarsguides.com/retro/walkthroughs/gameboy/games/pokemonyellow/gameshark/",
+      "last_verified": "2026-08-16"
+    },
+    {
+      "id": "yellow-wild-level-100",
+      "name": "Wild Pokémon at Level 100",
+      "description": "Wild encounters appear at level 100 (filled-in example of the level-modifier template, 64 hex = 100).",
+      "device": "gameshark_gb",
+      "code": "016426D1",
+      "region": "US",
+      "rom_revision": "unspecified",
+      "requires_master_code": false,
+      "master_code_id": null,
+      "is_master_code": false,
+      "activation": null,
+      "reliability": "community_reported",
+      "side_effects": [
+        "Disable before saving; level-modified Pokémon have been reported to freeze the game when leveling up."
+      ],
+      "source_url": "https://gaminggorilla.com/pokemon-yellow-cheats/",
+      "last_verified": "2026-08-16"
+    },
+    {
+      "id": "yellow-catch-trainer-pokemon",
+      "name": "Catch Other Trainers' Pokémon",
+      "description": "Throw a Poké Ball in a trainer battle and capture the opponent's Pokémon as if it were wild.",
+      "device": "gameshark_gb",
+      "code": "010156D0",
+      "region": "US",
+      "rom_revision": "unspecified",
+      "requires_master_code": false,
+      "master_code_id": null,
+      "is_master_code": false,
+      "activation": null,
+      "reliability": "source_verified",
+      "side_effects": [
+        "Don't save with the cheat active."
+      ],
+      "source_url": "https://almarsguides.com/retro/walkthroughs/gameboy/games/pokemonyellow/gameshark/",
+      "last_verified": "2026-08-16"
+    }
+  ]
+}

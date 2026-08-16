@@ -7,6 +7,7 @@ struct GameListView: View {
     @State private var searchText = ""
     @AppStorage("appearance") private var appearanceRaw = Appearance.system.rawValue
     @AppStorage("howItWorksDismissed") private var howItWorksDismissed = false
+    @EnvironmentObject private var favorites: Favorites
 
     private var appearance: Appearance {
         Appearance(rawValue: appearanceRaw) ?? .system
@@ -46,6 +47,22 @@ struct GameListView: View {
                     if query.isEmpty {
                         statsRow
                         if !howItWorksDismissed { howItWorksCard }
+
+                        let starred = favorites.resolved(in: library)
+                        if !starred.isEmpty {
+                            Label("Favorites", systemImage: "star.fill")
+                                .font(.title3.weight(.bold))
+                                .foregroundStyle(.primary)
+                                .padding(.top, 4)
+                            ForEach(starred, id: \.code.id) { match in
+                                NavigationLink {
+                                    codeDestination(match)
+                                } label: {
+                                    CodeSearchRow(match: match)
+                                }
+                                .buttonStyle(.plain)
+                            }
+                        }
                     }
 
                     ForEach(filteredGames, id: \.game.slug) { file in
@@ -61,15 +78,7 @@ struct GameListView: View {
                             .padding(.top, 4)
                         ForEach(matchingCodes, id: \.code.id) { match in
                             NavigationLink {
-                                CodeDetailView(
-                                    file: match.game,
-                                    code: match.code,
-                                    selectedRevision: UserDefaults.standard.string(
-                                        forKey: "revision.\(match.game.game.slug)")
-                                        ?? match.game.game.revisions.first ?? "unspecified",
-                                    deltaLink: UserDefaults.standard.string(
-                                        forKey: "deltaLink.\(match.game.game.slug)") ?? ""
-                                )
+                                codeDestination(match)
                             } label: {
                                 CodeSearchRow(match: match)
                             }
@@ -100,6 +109,18 @@ struct GameListView: View {
             }
         }
         .preferredColorScheme(appearance.colorScheme)
+    }
+
+    private func codeDestination(_ match: (game: GameFile, code: CheatCode)) -> some View {
+        CodeDetailView(
+            file: match.game,
+            code: match.code,
+            selectedRevision: UserDefaults.standard.string(
+                forKey: "revision.\(match.game.game.slug)")
+                ?? match.game.game.revisions.first ?? "unspecified",
+            deltaLink: UserDefaults.standard.string(
+                forKey: "deltaLink.\(match.game.game.slug)") ?? ""
+        )
     }
 
     private var header: some View {

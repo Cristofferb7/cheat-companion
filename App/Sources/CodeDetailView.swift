@@ -10,6 +10,16 @@ struct CodeDetailView: View {
     let deltaLink: String
 
     @State private var copiedID: String?
+    @EnvironmentObject private var favorites: Favorites
+
+    private var shareText: String {
+        var lines = ["\(code.name) — \(file.game.title) (\(code.region))",
+                     "Device: \(code.device.displayName)",
+                     code.code]
+        if let activation = code.activation { lines.append("Activate: \(activation)") }
+        lines.append("Source: \(code.sourceURL)")
+        return lines.joined(separator: "\n")
+    }
 
     private var masterCode: CheatCode? {
         guard code.requiresMasterCode, let id = code.masterCodeID else { return nil }
@@ -63,6 +73,20 @@ struct CodeDetailView: View {
         .navigationTitle(code.name)
         .navigationBarTitleDisplayMode(.inline)
         .tint(Theme.gameColor(for: file.game))
+        .toolbar {
+            ToolbarItem(placement: .topBarTrailing) {
+                Button {
+                    favorites.toggle(file.game, code)
+                } label: {
+                    Image(systemName: favorites.contains(file.game, code) ? "star.fill" : "star")
+                }
+            }
+            ToolbarItem(placement: .topBarTrailing) {
+                ShareLink(item: shareText) {
+                    Image(systemName: "square.and.arrow.up")
+                }
+            }
+        }
     }
 
     private var pasteInstructions: String {

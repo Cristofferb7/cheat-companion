@@ -95,6 +95,43 @@ let covers: [Cover] = [
         poly(ctx, [(300, 555), (380, 480), (300, 405), (220, 480)], color(0xF5F7FA))
         poly(ctx, [(300, 660), (470, 480), (300, 555), (220, 480), (130, 480)],
              color(0xFFFFFF, 0.12))
+    },
+    Cover(slug: "pokemon-yellow-us", top: 0xFDE047, bottom: 0xD97706,
+          series: "POKÉMON", title: "Yellow") { ctx, _ in
+        // Lightning bolt, white on yellow
+        poly(ctx, [(345, 660), (205, 445), (285, 445), (250, 310),
+                   (400, 520), (315, 520)], color(0xFFFFFF))
+        poly(ctx, [(330, 610), (250, 470), (300, 470), (280, 380),
+                   (365, 500), (305, 500)], color(0xF59E0B, 0.55))
+    },
+    Cover(slug: "pokemon-ruby-us", top: 0xF87171, bottom: 0x7F1D1D,
+          series: "POKÉMON", title: "Ruby") { ctx, _ in
+        // Ruby gem: same emerald cut, red palette
+        let o: [(CGFloat, CGFloat)] = [(210, 620), (390, 620), (460, 550),
+                                       (460, 390), (390, 320), (210, 320),
+                                       (140, 390), (140, 550)]
+        poly(ctx, o, color(0xFECACA))
+        let i: [(CGFloat, CGFloat)] = [(245, 575), (355, 575), (405, 525),
+                                       (405, 415), (355, 365), (245, 365),
+                                       (195, 415), (195, 525)]
+        poly(ctx, i, color(0xDC2626))
+        poly(ctx, [(245, 575), (355, 575), (300, 470)], color(0x991B1B, 0.85))
+        poly(ctx, [(245, 365), (355, 365), (300, 470)], color(0xF87171, 0.9))
+    },
+    Cover(slug: "pokemon-heartgold-us", top: 0xFCD34D, bottom: 0x92400E,
+          series: "POKÉMON", title: "HeartGold") { ctx, _ in
+        // Heart: two circles + triangle, gold on amber
+        let heart = CGMutablePath()
+        heart.move(to: CGPoint(x: 300, y: 330))
+        heart.addLine(to: CGPoint(x: 155, y: 505))
+        heart.addArc(center: CGPoint(x: 228, y: 560), radius: 91,
+                     startAngle: .pi * 1.25, endAngle: .pi * 0.25, clockwise: false)
+        heart.addArc(center: CGPoint(x: 372, y: 560), radius: 91,
+                     startAngle: .pi * 0.75, endAngle: .pi * 1.75, clockwise: false)
+        heart.closeSubpath()
+        ctx.addPath(heart)
+        ctx.setFillColor(color(0xFFF7DB))
+        ctx.fillPath()
     }
 ]
 

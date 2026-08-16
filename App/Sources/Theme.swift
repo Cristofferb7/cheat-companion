@@ -77,6 +77,9 @@ enum Theme {
         case "pokemon-emerald-us": return Color(hex: 0x0E9F6E)
         case "pokemon-crystal-us": return Color(hex: 0x2678D6)
         case "pokemon-platinum-us": return Color(hex: 0x5B6472)
+        case "pokemon-yellow-us": return Color(hex: 0xD97706)
+        case "pokemon-ruby-us": return Color(hex: 0xB91C1C)
+        case "pokemon-heartgold-us": return Color(hex: 0xB7791F)
         default: return color(for: game.system)
         }
     }
