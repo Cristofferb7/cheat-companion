@@ -62,6 +62,7 @@ struct CodeDetailView: View {
         }
         .navigationTitle(code.name)
         .navigationBarTitleDisplayMode(.inline)
+        .tint(Theme.gameColor(for: file.game))
     }
 
     private var pasteInstructions: String {
@@ -95,7 +96,7 @@ struct CodeDetailView: View {
                 }
                 .buttonStyle(.borderedProminent)
                 .controlSize(.large)
-                .tint(copiedID == target.id ? .green : .accentColor)
+                .tint(copiedID == target.id ? .green : Theme.gameColor(for: file.game))
             }
             .listRowInsets(EdgeInsets(top: 10, leading: 12, bottom: 10, trailing: 12))
             .listRowBackground(Color.clear)

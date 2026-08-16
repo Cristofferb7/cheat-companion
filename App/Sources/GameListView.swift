@@ -17,7 +17,7 @@ struct GameListView: View {
             List(filtered, id: \.game.slug) { file in
                 NavigationLink(value: file.game.slug) {
                     HStack(spacing: 12) {
-                        SystemBadge(system: file.game.system)
+                        CoverArt(game: file.game, height: 64)
                         VStack(alignment: .leading, spacing: 2) {
                             Text(file.game.title)
                                 .font(.headline)

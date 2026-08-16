@@ -23,6 +23,20 @@ struct GameDetailView: View {
 
     var body: some View {
         List {
+            Section {
+                VStack(spacing: 12) {
+                    CoverArt(game: file.game, height: 180)
+                    HStack(spacing: 8) {
+                        chip(file.game.system.displayName)
+                        chip(file.game.region)
+                        chip("\(file.codes.count) codes")
+                    }
+                }
+                .frame(maxWidth: .infinity)
+                .listRowBackground(Color.clear)
+                .listRowSeparator(.hidden)
+            }
+
             if revisionMismatches {
                 Section {
                     Picker("My ROM revision", selection: $selectedRevision) {
@@ -61,9 +75,19 @@ struct GameDetailView: View {
             }
         }
         .navigationTitle(file.game.title)
+        .navigationBarTitleDisplayMode(.inline)
+        .tint(Theme.gameColor(for: file.game))
         .sheet(isPresented: $showLinkHelp) {
             DeltaLinkSheet(deltaLink: $deltaLink)
         }
+    }
+
+    private func chip(_ text: String) -> some View {
+        Text(text)
+            .font(.caption.weight(.semibold))
+            .foregroundStyle(Theme.gameColor(for: file.game))
+            .padding(.horizontal, 10).padding(.vertical, 4)
+            .background(Theme.gameColor(for: file.game).opacity(0.12), in: Capsule())
     }
 }
 

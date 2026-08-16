@@ -1,4 +1,5 @@
 import SwiftUI
+import UIKit
 import CheatKit
 
 extension Color {
@@ -32,6 +33,51 @@ enum Theme {
         case .gba: return "gamecontroller.fill"
         case .nds: return "laptopcomputer"
         }
+    }
+
+    /// Signature color per game, matched to its cover art. Screens for a game
+    /// tint to this so each game has its own feel. Falls back to the system color.
+    static func gameColor(for game: GameInfo) -> Color {
+        switch game.slug {
+        case "pokemon-firered-us": return Color(hex: 0xDC4B22)
+        case "pokemon-emerald-us": return Color(hex: 0x0E9F6E)
+        case "pokemon-crystal-us": return Color(hex: 0x2678D6)
+        case "pokemon-platinum-us": return Color(hex: 0x5B6472)
+        default: return color(for: game.system)
+        }
+    }
+
+    /// Cover image for a game if one is bundled (asset "cover-<slug>").
+    static func coverImage(for game: GameInfo) -> Image? {
+        guard UIImage(named: "cover-\(game.slug)") != nil else { return nil }
+        return Image("cover-\(game.slug)")
+    }
+}
+
+/// Cover-art card: bundled cover if present, else a colored monogram card.
+struct CoverArt: View {
+    let game: GameInfo
+    var height: CGFloat
+
+    var body: some View {
+        Group {
+            if let image = Theme.coverImage(for: game) {
+                image.resizable().aspectRatio(contentMode: .fit)
+            } else {
+                RoundedRectangle(cornerRadius: 8, style: .continuous)
+                    .fill(Theme.gameColor(for: game).gradient)
+                    .aspectRatio(600 / 840, contentMode: .fit)
+                    .overlay {
+                        Image(systemName: Theme.iconName(for: game.system))
+                            .font(.title.weight(.bold))
+                            .foregroundStyle(.white)
+                    }
+            }
+        }
+        .frame(height: height)
+        .clipShape(RoundedRectangle(cornerRadius: height > 100 ? 12 : 6, style: .continuous))
+        .shadow(color: Theme.gameColor(for: game).opacity(0.35),
+                radius: height > 100 ? 12 : 3, y: height > 100 ? 6 : 2)
     }
 }
 
