@@ -33,6 +33,27 @@ func poly(_ ctx: CGContext, _ pts: [(CGFloat, CGFloat)], _ fill: CGColor) {
 }
 
 let covers: [Cover] = [
+    Cover(slug: "pokemon-radical-red", top: 0x991B1B, bottom: 0x1C1917,
+          series: "ROM HACK", title: "Radical Red") { ctx, _ in
+        // Three glitch slashes
+        poly(ctx, [(180, 640), (240, 660), (330, 350), (270, 330)], color(0xEF4444))
+        poly(ctx, [(280, 660), (340, 680), (430, 380), (370, 360)], color(0xFCA5A5))
+        poly(ctx, [(370, 620), (420, 636), (490, 400), (440, 384)], color(0xEF4444, 0.7))
+    },
+    Cover(slug: "pokemon-unbound", top: 0x4338CA, bottom: 0x111033,
+          series: "ROM HACK", title: "Unbound") { ctx, _ in
+        // Broken chain: one closed ring, one ring with a gap, spark between
+        ctx.setStrokeColor(color(0xE0E7FF))
+        ctx.setLineWidth(34)
+        ctx.setLineCap(.round)
+        ctx.addArc(center: CGPoint(x: 225, y: 560), radius: 80,
+                   startAngle: 0, endAngle: .pi * 2, clockwise: false)
+        ctx.strokePath()
+        ctx.addArc(center: CGPoint(x: 385, y: 430), radius: 80,
+                   startAngle: .pi * 0.42, endAngle: .pi * 2.08, clockwise: false)
+        ctx.strokePath()
+        poly(ctx, [(300, 512), (330, 488), (312, 522), (342, 500)], color(0xFDE047))
+    },
     Cover(slug: "pokemon-firered-us", top: 0xF97316, bottom: 0xB91C1C,
           series: "POKÉMON", title: "FireRed") { ctx, r in
         // Flame: outer teardrop + inner core

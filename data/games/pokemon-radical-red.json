@@ -1,0 +1,208 @@
+{
+  "schema_version": 1,
+  "game": {
+    "slug": "pokemon-radical-red",
+    "title": "Pokémon Radical Red",
+    "system": "gba",
+    "region": "US",
+    "revisions": ["v4.1", "v4.0"],
+    "revision_note": "All device codes here were verified on Radical Red v4.1 (US FireRed 1.0 base). Nothing is verified for v3.02 — treat older RR versions as unsupported. RR also ships its own built-in cheat console (settings → TV in your room) from v4.0.",
+    "is_rom_hack": true,
+    "based_on": "Pokémon FireRed (US v1.0)",
+    "warnings": [
+      "Never enable multiple cheats at once — save corruption in Radical Red almost always comes from stacked cheats.",
+      "Item cheats deliver via the Item PC, not your bag (RR restructured the item system). Turn them off right after withdrawing.",
+      "RR's level caps fight EXP/Rare Candy cheats: over-leveled Pokémon can get stuck earning 1 EXP per battle. Fix: restart the emulator with all cheats disabled.",
+      "Generic FireRed codes point at the wrong addresses in RR — don't import them.",
+      "Level-modifier cheats don't work in RR, and Gigantamax item codes are dead (that content was removed).",
+      "If a code seems inert: enter/exit a building, and double-check the device type — CodeBreaker vs GameShark codes fail silently under the wrong type."
+    ]
+  },
+  "codes": [
+    {
+      "id": "radicalred-rare-candy-pc",
+      "name": "Unlimited Rare Candy",
+      "description": "Withdraw unlimited Rare Candies from any Item PC. Tip: RR also has a built-in cheat console — type Woyaopp on the TV in your room (v4.0+) for infinite Rare Candies with zero corruption risk.",
+      "device": "codebreaker",
+      "code": "820257C4 0044",
+      "region": "US",
+      "rom_revision": "v4.1",
+      "requires_master_code": false,
+      "master_code_id": null,
+      "is_master_code": false,
+      "activation": "Enable → any Item PC → Withdraw. Turn OFF after withdrawing.",
+      "reliability": "source_verified",
+      "side_effects": [
+        "Level caps still apply — over-leveling can stall EXP gain at 1 per battle.",
+        "Uses the same PC address as the Master Ball code — enable only one at a time."
+      ],
+      "source_url": "https://www.pokemoncoders.com/pokemon-radical-red-cheats/",
+      "last_verified": "2026-08-16"
+    },
+    {
+      "id": "radicalred-master-ball-pc",
+      "name": "Unlimited Master Ball",
+      "description": "Withdraw unlimited Master Balls from any Item PC.",
+      "device": "codebreaker",
+      "code": "820257C4 0001",
+      "region": "US",
+      "rom_revision": "v4.1",
+      "requires_master_code": false,
+      "master_code_id": null,
+      "is_master_code": false,
+      "activation": "Enable → any Item PC → Withdraw. Turn OFF after withdrawing.",
+      "reliability": "source_verified",
+      "side_effects": [
+        "Uses the same PC address as the Rare Candy code — enable only one at a time."
+      ],
+      "source_url": "https://www.pokemoncoders.com/pokemon-radical-red-cheats/",
+      "last_verified": "2026-08-16"
+    },
+    {
+      "id": "radicalred-money",
+      "name": "Unlimited Money",
+      "description": "Max money. A GameShark alternative (29C78059 96542194) and a sell-high option (830050A8 1388, items sell for 5000) also exist on the same source.",
+      "device": "codebreaker",
+      "code": "820257BC 423F\n820257BE 000F",
+      "region": "US",
+      "rom_revision": "v4.1",
+      "requires_master_code": false,
+      "master_code_id": null,
+      "is_master_code": false,
+      "activation": null,
+      "reliability": "source_verified",
+      "side_effects": [],
+      "source_url": "https://www.pokemoncoders.com/pokemon-radical-red-cheats/",
+      "last_verified": "2026-08-16"
+    },
+    {
+      "id": "radicalred-walk-through-walls",
+      "name": "Walk Through Walls",
+      "description": "Walk through walls and terrain. The most widely cross-confirmed RR code.",
+      "device": "gameshark_v3",
+      "code": "509197D3 542975F4\n78DA95DF 44018CB4",
+      "region": "US",
+      "rom_revision": "v4.1",
+      "requires_master_code": false,
+      "master_code_id": null,
+      "is_master_code": false,
+      "activation": null,
+      "reliability": "source_verified",
+      "side_effects": [
+        "Reaching areas early can trigger broken scripting or a softlock — disable before map transitions."
+      ],
+      "source_url": "https://www.pokemoncoders.com/pokemon-radical-red-cheats/",
+      "last_verified": "2026-08-16"
+    },
+    {
+      "id": "radicalred-shiny",
+      "name": "Shiny Wild Pokémon",
+      "description": "Wild encounters are shiny. Note: one source prints a different first line (F3A9A86D 4E2629B4) — this pair is the better-attested RR-specific variant.",
+      "device": "gameshark_v3",
+      "code": "1670047D 04815C68\n18452A7D DDE55BCC",
+      "region": "US",
+      "rom_revision": "v4.1",
+      "requires_master_code": false,
+      "master_code_id": null,
+      "is_master_code": false,
+      "activation": "Enable, then start a wild encounter",
+      "reliability": "source_verified",
+      "side_effects": [
+        "Glitched nicknames after catching are a known side effect — turn off when not hunting."
+      ],
+      "source_url": "https://www.pokemoncoders.com/pokemon-radical-red-cheats/",
+      "last_verified": "2026-08-16"
+    },
+    {
+      "id": "radicalred-nature-adamant",
+      "name": "Wild Nature Modifier (Adamant)",
+      "description": "Forces wild Pokémon to Adamant nature. The first line is the required common line; each nature has its own second line (this entry is the Adamant example). Later RR versions also have an in-game mint system.",
+      "device": "gameshark_v3",
+      "code": "AA3BB0ED 41CD5D95\n5EB8DEEE 692ED298",
+      "region": "US",
+      "rom_revision": "v4.1",
+      "requires_master_code": false,
+      "master_code_id": null,
+      "is_master_code": false,
+      "activation": "Enable, then catch the wild Pokémon",
+      "reliability": "source_verified",
+      "side_effects": [
+        "Only one nature code active at a time."
+      ],
+      "source_url": "https://www.pokemoncoders.com/pokemon-radical-red-cheats/",
+      "last_verified": "2026-08-16"
+    },
+    {
+      "id": "radicalred-unlimited-exp",
+      "name": "Unlimited EXP",
+      "description": "Huge EXP after each battle. Sources disagree on device type — enter as CodeBreaker first; if inert, re-enter as GameShark.",
+      "device": "codebreaker",
+      "code": "74000130 027D\n7300218C 0001\n82023D50 1388",
+      "region": "US",
+      "rom_revision": "v4.1",
+      "requires_master_code": false,
+      "master_code_id": null,
+      "is_master_code": false,
+      "activation": "Win a battle; turn off to stop gaining",
+      "reliability": "source_verified",
+      "side_effects": [
+        "Level caps still apply — over-leveled Pokémon stall at 1 EXP per battle."
+      ],
+      "source_url": "https://www.pokemoncoders.com/pokemon-radical-red-cheats/",
+      "last_verified": "2026-08-16"
+    },
+    {
+      "id": "radicalred-unlimited-pp",
+      "name": "Unlimited PP",
+      "description": "Party Pokémon never run out of PP in battle.",
+      "device": "codebreaker",
+      "code": "42023C08 6363\n00000002 0002",
+      "region": "US",
+      "rom_revision": "v4.1",
+      "requires_master_code": false,
+      "master_code_id": null,
+      "is_master_code": false,
+      "activation": null,
+      "reliability": "source_verified",
+      "side_effects": [],
+      "source_url": "https://www.pokemoncoders.com/pokemon-radical-red-cheats/",
+      "last_verified": "2026-08-16"
+    },
+    {
+      "id": "radicalred-all-badges",
+      "name": "Unlock All Badges",
+      "description": "All gym badges unlocked (check the trainer card).",
+      "device": "gameshark_v3",
+      "code": "EFCE867D 5403D40D",
+      "region": "US",
+      "rom_revision": "v4.1",
+      "requires_master_code": false,
+      "master_code_id": null,
+      "is_master_code": false,
+      "activation": "Enable, check trainer card, turn off afterwards",
+      "reliability": "source_verified",
+      "side_effects": [
+        "Badge unlocks interact with obedience mechanics — RR ties obedience to level caps; use with care."
+      ],
+      "source_url": "https://www.pokemoncoders.com/pokemon-radical-red-cheats/",
+      "last_verified": "2026-08-16"
+    },
+    {
+      "id": "radicalred-fast-egg-hatch",
+      "name": "Fast Egg Hatch",
+      "description": "Eggs hatch within roughly 5 steps.",
+      "device": "codebreaker",
+      "code": "820285C6 00FE",
+      "region": "US",
+      "rom_revision": "v4.1",
+      "requires_master_code": false,
+      "master_code_id": null,
+      "is_master_code": false,
+      "activation": "Enable while walking with an egg; turn off after hatching",
+      "reliability": "community_reported",
+      "side_effects": [],
+      "source_url": "https://www.pokemoncoders.com/pokemon-radical-red-cheats/",
+      "last_verified": "2026-08-16"
+    }
+  ]
+}

@@ -85,7 +85,8 @@ do {
                 check("seed data: \(game.game.slug)/\(code.id) source_url parses",
                       URL(string: code.sourceURL) != nil)
             }
-            if game.game.system == .gba {
+            // ROM hacks are exempt: they often work without master codes.
+            if game.game.system == .gba, !game.game.isROMHack {
                 let hasGameShark = game.codes.contains {
                     ($0.device == .gamesharkV3 || $0.device == .actionReplay) && !$0.isMasterCode
                 }

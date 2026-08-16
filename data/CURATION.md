@@ -1,5 +1,24 @@
 # Curation notes — what's in, what's out, and why
 
+## 2026-08-16, ROM hacks (Radical Red, Unbound)
+
+Hacks get game-level `warnings` (rendered as "Know before you cheat") carrying
+what their communities report breaks: Unbound's deliberate anti-cheat item
+protections and broken FireRed PC-item codes; RR's level-cap interactions and
+dead code families. Omitted on purpose:
+- **RR**: One-Hit-KO (reported failing specifically on Delta), Complete
+  Pokédex (source's own freeze warning), Mega catch codes (revert after
+  capture), the in-game console codes Seviian/Mega/Puzzle (need New Game+).
+  The safe in-game `Woyaopp` console cheat is mentioned in the Rare Candy
+  description instead of being a code record (it isn't a device code).
+- **Unbound**: 'Unlock All Badges' (permanently breaks gym battles), the new
+  100% catch rate (resets the ROM after capture + sources conflict on an
+  operand), Mega Stone codes (sources conflict on the write address), old
+  2-line shiny (locks gender/stats), catch-trainer-Pokémon (reported dead on
+  2.1.1.1 with conflicting behavior descriptions).
+- Integrity rule change: the "GBA game with GameShark codes must ship a
+  master code" check now exempts ROM hacks — RR verifiably needs none.
+
 ## 2026-08-16, second batch (LeafGreen, SoulSilver, Red/Blue)
 
 - **LeafGreen**: v1.0 and v1.1 need entirely different master codes — both

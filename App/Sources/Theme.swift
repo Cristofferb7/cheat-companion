@@ -83,6 +83,8 @@ enum Theme {
         case "pokemon-leafgreen-us": return Color(hex: 0x16A34A)
         case "pokemon-red-blue-us": return Color(hex: 0x2447C9)
         case "pokemon-soulsilver-us": return Color(hex: 0x64748B)
+        case "pokemon-radical-red": return Color(hex: 0xE11D48)
+        case "pokemon-unbound": return Color(hex: 0x6366F1)
         default: return color(for: game.system)
         }
     }

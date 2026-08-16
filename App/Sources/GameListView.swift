@@ -79,11 +79,26 @@ struct GameListView: View {
                         }
                     }
 
-                    ForEach(filteredGames, id: \.game.slug) { file in
+                    let official = filteredGames.filter { !$0.game.isROMHack }
+                    let hacks = filteredGames.filter { $0.game.isROMHack }
+
+                    ForEach(official, id: \.game.slug) { file in
                         NavigationLink(value: file.game.slug) {
                             GameCard(file: file)
                         }
                         .buttonStyle(.plain)
+                    }
+
+                    if !hacks.isEmpty {
+                        Label("ROM Hacks", systemImage: "wand.and.stars")
+                            .font(.title3.weight(.bold))
+                            .padding(.top, 4)
+                        ForEach(hacks, id: \.game.slug) { file in
+                            NavigationLink(value: file.game.slug) {
+                                GameCard(file: file)
+                            }
+                            .buttonStyle(.plain)
+                        }
                     }
 
                     if !matchingCodes.isEmpty {
@@ -265,9 +280,18 @@ struct GameCard: View {
         HStack(spacing: 14) {
             CoverArt(game: file.game, height: 86)
             VStack(alignment: .leading, spacing: 4) {
-                Text(file.game.title)
-                    .font(.headline)
-                    .foregroundStyle(.primary)
+                HStack(spacing: 6) {
+                    Text(file.game.title)
+                        .font(.headline)
+                        .foregroundStyle(.primary)
+                    if file.game.isROMHack {
+                        Text("HACK")
+                            .font(.caption2.weight(.black))
+                            .foregroundStyle(.white)
+                            .padding(.horizontal, 5).padding(.vertical, 2)
+                            .background(Theme.gameColor(for: file.game), in: Capsule())
+                    }
+                }
                 Text("\(file.game.system.displayName) · \(file.game.region)")
                     .font(.caption)
                     .foregroundStyle(.secondary)

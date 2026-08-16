@@ -28,14 +28,32 @@ struct GameDetailView: View {
                 VStack(spacing: 12) {
                     CoverArt(game: file.game, height: 180)
                     HStack(spacing: 8) {
+                        if file.game.isROMHack { chip("ROM Hack") }
                         chip(file.game.system.displayName)
                         chip(file.game.region)
                         chip("\(file.codes.count) codes")
+                    }
+                    if let basedOn = file.game.basedOn {
+                        Text("Fan-made hack of \(basedOn)")
+                            .font(.caption)
+                            .foregroundStyle(.secondary)
                     }
                 }
                 .frame(maxWidth: .infinity)
                 .listRowBackground(Color.clear)
                 .listRowSeparator(.hidden)
+            }
+
+            if !file.game.warnings.isEmpty {
+                Section {
+                    ForEach(file.game.warnings, id: \.self) { warning in
+                        Label(warning, systemImage: "exclamationmark.triangle.fill")
+                            .font(.callout)
+                            .foregroundStyle(.orange)
+                    }
+                } header: {
+                    Text("Know before you cheat")
+                }
             }
 
             if revisionMismatches {
@@ -84,6 +102,16 @@ struct GameDetailView: View {
         }
         .navigationTitle(file.game.title)
         .navigationBarTitleDisplayMode(.inline)
+        .scrollContentBackground(.hidden)
+        .background(
+            LinearGradient(
+                colors: [Theme.gameColor(for: file.game).opacity(0.16),
+                         Theme.gameColor(for: file.game).opacity(0.02)],
+                startPoint: .top, endPoint: .center
+            )
+            .background(Color(uiColor: .systemGroupedBackground))
+            .ignoresSafeArea()
+        )
         .tint(Theme.gameColor(for: file.game))
         .sheet(isPresented: $showLinkHelp) {
             DeltaLinkSheet(deltaLink: $deltaLink)

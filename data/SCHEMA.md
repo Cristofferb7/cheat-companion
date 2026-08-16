@@ -15,7 +15,11 @@ reviewable. The app bundles these files; CheatKit validates every record at load
     "system": "gba",                     // "gb" | "gbc" | "gba" | "nds"
     "region": "US",                      // "US" | "EU" | "JP"
     "revisions": ["v1.0", "v1.1"],       // known ROM revisions for this region
-    "revision_note": "v1.0 and v1.1 use different memory addresses — codes are NOT interchangeable."
+    "revision_note": "v1.0 and v1.1 use different memory addresses — codes are NOT interchangeable.",
+    "is_rom_hack": false,                // optional, default false. True for fan hacks
+    "based_on": null,                    // optional. Hacks: the official base game
+    "warnings": []                       // optional. Game-level warnings shown in the UI,
+                                         // e.g. cheat families known to BREAK this hack
   },
   "codes": [ /* Code records, see below */ ]
 }

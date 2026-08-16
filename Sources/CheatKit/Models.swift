@@ -56,10 +56,31 @@ public struct GameInfo: Codable, Hashable, Sendable {
     public let region: String
     public let revisions: [String]
     public let revisionNote: String?
+    /// True for fan-made ROM hacks (Radical Red, Unbound, …).
+    public let isROMHack: Bool
+    /// For hacks: the official game they're built on, e.g. "Pokémon FireRed (US v1.0)".
+    public let basedOn: String?
+    /// Game-level warnings shown prominently — e.g. cheats known to break this hack.
+    public let warnings: [String]
 
     enum CodingKeys: String, CodingKey {
-        case slug, title, system, region, revisions
+        case slug, title, system, region, revisions, warnings
         case revisionNote = "revision_note"
+        case isROMHack = "is_rom_hack"
+        case basedOn = "based_on"
+    }
+
+    public init(from decoder: Decoder) throws {
+        let c = try decoder.container(keyedBy: CodingKeys.self)
+        slug = try c.decode(String.self, forKey: .slug)
+        title = try c.decode(String.self, forKey: .title)
+        system = try c.decode(System.self, forKey: .system)
+        region = try c.decode(String.self, forKey: .region)
+        revisions = try c.decode([String].self, forKey: .revisions)
+        revisionNote = try c.decodeIfPresent(String.self, forKey: .revisionNote)
+        isROMHack = try c.decodeIfPresent(Bool.self, forKey: .isROMHack) ?? false
+        basedOn = try c.decodeIfPresent(String.self, forKey: .basedOn)
+        warnings = try c.decodeIfPresent([String].self, forKey: .warnings) ?? []
     }
 }
 
