@@ -16,13 +16,23 @@ struct GameListView: View {
         NavigationStack {
             List(filtered, id: \.game.slug) { file in
                 NavigationLink(value: file.game.slug) {
-                    VStack(alignment: .leading, spacing: 2) {
-                        Text(file.game.title)
-                            .font(.headline)
-                        Text("\(file.game.system.displayName) · \(file.game.region) · \(file.codes.count) codes")
-                            .font(.caption)
+                    HStack(spacing: 12) {
+                        SystemBadge(system: file.game.system)
+                        VStack(alignment: .leading, spacing: 2) {
+                            Text(file.game.title)
+                                .font(.headline)
+                            Text("\(file.game.system.displayName) · \(file.game.region)")
+                                .font(.caption)
+                                .foregroundStyle(.secondary)
+                        }
+                        Spacer()
+                        Text("\(file.codes.count)")
+                            .font(.subheadline.weight(.semibold).monospacedDigit())
                             .foregroundStyle(.secondary)
+                            .padding(.horizontal, 9).padding(.vertical, 3)
+                            .background(.quaternary, in: Capsule())
                     }
+                    .padding(.vertical, 4)
                 }
             }
             .navigationTitle("Games")

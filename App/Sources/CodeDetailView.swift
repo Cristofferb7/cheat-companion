@@ -74,24 +74,32 @@ struct CodeDetailView: View {
     @ViewBuilder
     private func codeSection(_ target: CheatCode, title: String, footer: String) -> some View {
         Section {
-            Text(target.code)
-                .font(.system(.body, design: .monospaced))
-                .textSelection(.enabled)
+            VStack(spacing: 12) {
+                CodeBlock(code: target.code)
 
-            Button {
-                UIPasteboard.general.string = target.code
-                copiedID = target.id
-                if !deltaLink.isEmpty, let url = URL(string: deltaLink) {
-                    UIApplication.shared.open(url)
+                Button {
+                    UIPasteboard.general.string = target.code
+                    withAnimation(.snappy) { copiedID = target.id }
+                    if !deltaLink.isEmpty, let url = URL(string: deltaLink) {
+                        UIApplication.shared.open(url)
+                    }
+                } label: {
+                    Label(
+                        copiedID == target.id
+                            ? "Copied"
+                            : (deltaLink.isEmpty ? "Copy code" : "Copy & open in Delta"),
+                        systemImage: copiedID == target.id ? "checkmark" : "doc.on.doc"
+                    )
+                    .font(.body.weight(.semibold))
+                    .frame(maxWidth: .infinity)
                 }
-            } label: {
-                Label(
-                    copiedID == target.id
-                        ? "Copied"
-                        : (deltaLink.isEmpty ? "Copy code" : "Copy & open in Delta"),
-                    systemImage: copiedID == target.id ? "checkmark" : "doc.on.doc"
-                )
+                .buttonStyle(.borderedProminent)
+                .controlSize(.large)
+                .tint(copiedID == target.id ? .green : .accentColor)
             }
+            .listRowInsets(EdgeInsets(top: 10, leading: 12, bottom: 10, trailing: 12))
+            .listRowBackground(Color.clear)
+            .listRowSeparator(.hidden)
         } header: {
             Text(title)
         } footer: {
